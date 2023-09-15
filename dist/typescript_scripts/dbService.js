@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:3000/blogs'; // Změňte URL na adresu vašeho JSON Serveru
+const apiUrl = 'http://localhost:3000/tests'; // Změňte URL na adresu vašeho JSON Serveru
 // CREATE - Pridávanie filmov
 export async function addPost(blog) {
     await fetch(apiUrl, {

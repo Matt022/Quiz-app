@@ -1,19 +1,52 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+    "tests": [
+        {
+            "id": 0,
+            "nazov": "MojTest",
+            "otazky": [
+                {
+                    "text": "Čo je hlavné mesto Slovenska?",
+                    "odpovede": [
+                        { "text": "Bratislava", "jeSpravna": true },
+                        { "text": "Praha", "jeSpravna": false },
+                        { "text": "Budapešť", "jeSpravna": false },
+                        { "text": "Varšava", "jeSpravna": false }
+                    ]
+                },
+                {
+                    "text": "Koľko je 2 + 2?",
+                    "odpovede": [
+                        { "text": "1", "jeSpravna": false },
+                        { "text": "3", "jeSpravna": false },
+                        { "text": "4", "jeSpravna": true },
+                        { "text": "5", "jeSpravna": false }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "nazov": "Test 1",
+            "otazky": [
+                {
+                    "text": "Čo je hlavné mesto Francúzska?",
+                    "odpovede": [
+                        { "text": "Paríž", "jeSpravna": true },
+                        { "text": "Londýn", "jeSpravna": false },
+                        { "text": "Berlín", "jeSpravna": false },
+                        { "text": "Madrid", "jeSpravna": false }
+                    ]
+                },
+                {
+                    "text": "Koľko je 3 + 3?",
+                    "odpovede": [
+                        { "text": "6", "jeSpravna": true },
+                        { "text": "7", "jeSpravna": false },
+                        { "text": "8", "jeSpravna": false },
+                        { "text": "5", "jeSpravna": false }
+                    ]
+                }
+            ]
+        }
+    ]
 }

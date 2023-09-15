@@ -1,6 +1,6 @@
 import { Test } from "../typescript_models/test";
 
-const apiUrl: string = 'http://localhost:3000/blogs'; // Změňte URL na adresu vašeho JSON Serveru
+const apiUrl: string = 'http://localhost:3000/tests'; // Změňte URL na adresu vašeho JSON Serveru
 
 // CREATE - Pridávanie filmov
 export async function addPost(blog: Test): Promise<void> {
