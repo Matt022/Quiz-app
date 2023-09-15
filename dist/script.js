@@ -1,5 +1,6 @@
 // Príklad vytvorenia testu
 const testHere = {
+    id: 0,
     nazov: "MojTest",
     otazky: [
         {
@@ -20,14 +21,35 @@ const testHere = {
                 { text: "5", jeSpravna: false },
             ],
         },
-        // Ďalšie otázky...
-    ],
+    ]
 };
-// Príklad, ako získať otázky pre test a ich odpovede
-const prvaOtazka = testHere.otazky[0];
-console.log("Otázka:", prvaOtazka.text);
-console.log("Odpovede:");
-prvaOtazka.odpovede.forEach((odpoved, index) => {
-    console.log(`${String.fromCharCode(65 + index)}. ${odpoved.text} (Správna: ${odpoved.jeSpravna ? "Áno" : "Nie"})`);
-});
+const testNameElement = document.getElementById("testName");
+testNameElement.textContent = testHere.nazov;
+const questionsContainer = document.getElementById("questions");
+for (let i = 0; i < testHere.otazky.length; i++) {
+    const questionDiv = document.createElement("div");
+    questionDiv.classList.add("question");
+    const questionText = document.createElement("p");
+    questionText.classList.add("question-text");
+    questionText.textContent = `Otázka ${i + 1}: ${testHere.otazky[i].text}`;
+    const answersDiv = document.createElement("div");
+    answersDiv.classList.add("answers");
+    testHere.otazky[i].odpovede.forEach((odpoved) => {
+        const answerDiv = document.createElement("div");
+        answerDiv.classList.add("answer");
+        const answerText = document.createElement("p");
+        answerText.textContent = odpoved.text;
+        if (odpoved.jeSpravna) {
+            answerText.classList.add("correct-answer");
+        }
+        else {
+            answerText.classList.add("incorrect-answer");
+        }
+        answerDiv.appendChild(answerText);
+        answersDiv.appendChild(answerDiv);
+    });
+    questionDiv.appendChild(questionText);
+    questionDiv.appendChild(answersDiv);
+    questionsContainer.appendChild(questionDiv);
+}
 export {};

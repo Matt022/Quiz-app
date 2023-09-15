@@ -1,7 +1,10 @@
+import { Odpoved } from "./typescript_models/odpoved";
+import { Otazka } from "./typescript_models/otazka";
 import { Test } from "./typescript_models/test";
 
 // Príklad vytvorenia testu
 const testHere: Test = {
+    id: 0,
     nazov: "MojTest",
     otazky: [
         {
@@ -22,14 +25,44 @@ const testHere: Test = {
                 { text: "5", jeSpravna: false },
             ],
         },
-        // Ďalšie otázky...
-    ],
+    ]
 };
 
-// Príklad, ako získať otázky pre test a ich odpovede
-const prvaOtazka = testHere.otazky[0];
-console.log("Otázka:", prvaOtazka.text);
-console.log("Odpovede:");
-prvaOtazka.odpovede.forEach((odpoved, index) => {
-    console.log(`${String.fromCharCode(65 + index)}. ${odpoved.text} (Správna: ${odpoved.jeSpravna ? "Áno" : "Nie"})`);
-});
+const testNameElement: HTMLSpanElement = <HTMLSpanElement>document.getElementById("testName");
+testNameElement.textContent = testHere.nazov;
+
+const questionsContainer: HTMLDivElement = <HTMLDivElement>document.getElementById("questions");
+
+for (let i: number = 0; i < testHere.otazky.length; i++) {
+    const questionDiv: HTMLDivElement = document.createElement("div");
+    questionDiv.classList.add("question");
+
+    const questionText: HTMLParagraphElement = document.createElement("p");
+    questionText.classList.add("question-text");
+    questionText.textContent = `Otázka ${i + 1}: ${testHere.otazky[i].text}`;
+
+    const answersDiv: HTMLDivElement = document.createElement("div");
+    answersDiv.classList.add("answers");
+
+    testHere.otazky[i].odpovede.forEach((odpoved: Odpoved) => {
+        const answerDiv: HTMLDivElement = document.createElement("div");
+        answerDiv.classList.add("answer");
+
+        const answerText: HTMLParagraphElement = document.createElement("p");
+        answerText.textContent = odpoved.text;
+
+        if (odpoved.jeSpravna) {
+            answerText.classList.add("correct-answer");
+        } else {
+            answerText.classList.add("incorrect-answer");
+        }
+
+        answerDiv.appendChild(answerText);
+        answersDiv.appendChild(answerDiv);
+    });
+
+    questionDiv.appendChild(questionText);
+    questionDiv.appendChild(answersDiv);
+    questionsContainer.appendChild(questionDiv);
+    
+}
