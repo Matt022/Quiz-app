@@ -1,43 +1,44 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-.test {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+header {
+    padding: 10px;
 }
 
-h1 {
-    font-size: 24px;
+header section.header-container {
+    padding: 0 20px;
 }
 
-.question {
-    margin-bottom: 20px;
-    background-color: #fff;
-    padding: 10px 30px;
+main {
+    padding: 10px;
 }
 
-.question-text {
-    font-weight: bold;
+main section.main-container {
+    display: flex;
+    padding: 0 20px;
 }
 
-.answer {
-    margin-top: 10px;
+main section.main-container div.testHolder {
+    margin: 20px 10px;
     border: 1px solid black;
+    padding: 20px 10px;
+}
+
+main section.main-container div.testHolder h2 {
+    margin-top: 0;
+}
+
+main section.main-container div.testHolder a {
+    color: white;
+    text-decoration: none;
+    background-color: rgb(0, 153, 255);
+    padding: 10px 20px;
     border-radius: 7px;
-    padding: 0 10px;
 }
-
-.correct-answer {
-    color: green;
-    font-weight: bold;
-}
-
-.incorrect-answer {
-    color: red;
-    font-weight: bold;
+main section.main-container div.testHolder a:hover {
+    background-color: rgb(6, 140, 230);
+    text-shadow: 1px 0px 0px #fff;
 }

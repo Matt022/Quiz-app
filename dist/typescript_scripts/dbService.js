@@ -1,48 +1,48 @@
-const apiUrl = 'http://localhost:3000/tests'; // Změňte URL na adresu vašeho JSON Serveru
-// CREATE - Pridávanie filmov
-export async function addPost(blog) {
+const apiUrl = 'http://localhost:3000/tests'; // Zmeňte URL na adresu vášho JSON Serveru
+// POST - pridanie testu
+export async function addTest(test) {
     await fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(blog),
+        body: JSON.stringify(test),
     });
 }
-// READ - Získání všech filmů
-export async function getAllBlogs() {
+// GET - získanie všetkých testov
+export async function getAllTests() {
     const response = await fetch(apiUrl);
     if (response.ok) {
-        const Blogs = await response.json();
-        return Blogs;
+        const tests = await response.json();
+        return tests;
     }
     else {
         return [];
     }
 }
-// READ - Získání filmu podle ID
-export async function getBlogById(id) {
+// GET - získanie špecifického testu
+export async function getTestById(id) {
     const response = await fetch(`${apiUrl}/${id}`);
     if (response.ok) {
-        const Blog = await response.json();
-        return Blog;
+        const test = await response.json();
+        return test;
     }
     else {
         return null;
     }
 }
-// UPDATE - Aktualizace filmu podle ID
-export async function updateBlog(id, updatedBlog) {
+// UPDATE - Aktualizácia testu podľa ID
+export async function updateTest(id, updatedTest) {
     await fetch(`${apiUrl}/${id}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(updatedBlog),
+        body: JSON.stringify(updatedTest),
     });
 }
-// DELETE - Odstranění filmu podle ID
-export async function deleteBlog(id) {
+// DELETE - Odstránenie testu podľa ID
+export async function deleteTest(id) {
     await fetch(`${apiUrl}/${id}`, {
         method: 'DELETE',
     });

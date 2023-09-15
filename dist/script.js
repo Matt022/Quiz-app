@@ -1,55 +1,21 @@
-// Príklad vytvorenia testu
-const testHere = {
-    id: 0,
-    nazov: "MojTest",
-    otazky: [
-        {
-            text: "Čo je hlavné mesto Slovenska?",
-            odpovede: [
-                { text: "Bratislava", jeSpravna: true },
-                { text: "Praha", jeSpravna: false },
-                { text: "Budapešť", jeSpravna: false },
-                { text: "Varšava", jeSpravna: false },
-            ],
-        },
-        {
-            text: "Koľko je 2 + 2?",
-            odpovede: [
-                { text: "1", jeSpravna: false },
-                { text: "3", jeSpravna: false },
-                { text: "4", jeSpravna: true },
-                { text: "5", jeSpravna: false },
-            ],
-        },
-    ]
-};
-const testNameElement = document.getElementById("testName");
-testNameElement.textContent = testHere.nazov;
-const questionsContainer = document.getElementById("questions");
-for (let i = 0; i < testHere.otazky.length; i++) {
-    const questionDiv = document.createElement("div");
-    questionDiv.classList.add("question");
-    const questionText = document.createElement("p");
-    questionText.classList.add("question-text");
-    questionText.textContent = `Otázka ${i + 1}: ${testHere.otazky[i].text}`;
-    const answersDiv = document.createElement("div");
-    answersDiv.classList.add("answers");
-    testHere.otazky[i].odpovede.forEach((odpoved) => {
-        const answerDiv = document.createElement("div");
-        answerDiv.classList.add("answer");
-        const answerText = document.createElement("p");
-        answerText.textContent = odpoved.text;
-        if (odpoved.jeSpravna) {
-            answerText.classList.add("correct-answer");
-        }
-        else {
-            answerText.classList.add("incorrect-answer");
-        }
-        answerDiv.appendChild(answerText);
-        answersDiv.appendChild(answerDiv);
+import { getAllTests } from "./typescript_scripts/dbService.js";
+const mainContainer = document.querySelector("section.main-container");
+getAllTests().then((tests) => {
+    tests.forEach((test) => {
+        const divTestHolder = document.createElement("div");
+        divTestHolder.classList.add("testHolder");
+        const headingTestName = document.createElement("h2");
+        headingTestName.classList.add("testName");
+        headingTestName.textContent = test.nazov;
+        divTestHolder.appendChild(headingTestName);
+        const paragraphQuestionCount = document.createElement("p");
+        paragraphQuestionCount.classList.add("question-counter");
+        paragraphQuestionCount.textContent = `Počet otázok v teste: ${test.otazky.length.toString()}`;
+        divTestHolder.appendChild(paragraphQuestionCount);
+        const anchorViewDetail = document.createElement("a");
+        anchorViewDetail.textContent = "View detail";
+        anchorViewDetail.href = `/pages/testDetail.html?id=${test.id}`;
+        divTestHolder.appendChild(anchorViewDetail);
+        mainContainer.appendChild(divTestHolder);
     });
-    questionDiv.appendChild(questionText);
-    questionDiv.appendChild(answersDiv);
-    questionsContainer.appendChild(questionDiv);
-}
-export {};
+});
