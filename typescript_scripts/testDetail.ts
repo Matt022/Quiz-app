@@ -3,7 +3,6 @@ import { Test } from "../typescript_models/test";
 import { getTestById } from "./dbService.js";
 import { getQuizIdFromURL } from "./helpers.js";
 
-
 const testId: number | null = getQuizIdFromURL();
 if (testId != null) {
     getTestById(testId).then((test: Test | null) => {

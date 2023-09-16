@@ -24,5 +24,5 @@ getAllTests().then((tests: Test[]) => {
         divTestHolder.appendChild(anchorViewDetail);
 
         mainContainer.appendChild(divTestHolder);
-    })
-})
+    });
+});
