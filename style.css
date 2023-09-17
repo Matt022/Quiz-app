@@ -24,11 +24,15 @@ main section.main-container {
 main section.main-container div.testHolder {
     margin: 20px 10px;
     border: 1px solid black;
-    padding: 20px 10px;
+    padding: 25px;
 }
 
 main section.main-container div.testHolder h2 {
     margin-top: 0;
+}
+
+main section.main-container div.testHolder p {
+    margin-bottom: 30px;
 }
 
 main section.main-container div.testHolder a {
@@ -38,6 +42,7 @@ main section.main-container div.testHolder a {
     padding: 10px 20px;
     border-radius: 7px;
 }
+
 main section.main-container div.testHolder a:hover {
     background-color: rgb(6, 140, 230);
     text-shadow: 1px 0px 0px #fff;

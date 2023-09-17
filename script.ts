@@ -15,12 +15,12 @@ getAllTests().then((tests: Test[]) => {
 
         const paragraphQuestionCount: HTMLParagraphElement = document.createElement("p");
         paragraphQuestionCount.classList.add("question-counter");
-        paragraphQuestionCount.textContent = `Počet otázok v teste: ${test.otazky.length.toString()}`;
+        paragraphQuestionCount.innerHTML = `Number of questions in the test: <strong>${test.otazky.length.toString()}</strong>`;
         divTestHolder.appendChild(paragraphQuestionCount);
 
         const anchorViewDetail: HTMLAnchorElement = document.createElement("a");
-        anchorViewDetail.textContent = "View detail";
-        anchorViewDetail.href = `/pages/testDetail.html?id=${test.id}`;
+        anchorViewDetail.textContent = "Apply to test";
+        anchorViewDetail.href = `/pages/testApplying.html?id=${test.id}`;
         divTestHolder.appendChild(anchorViewDetail);
 
         mainContainer.appendChild(divTestHolder);

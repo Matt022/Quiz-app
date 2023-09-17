@@ -18,7 +18,7 @@ if (testId != null) {
                 
                 const questionText: HTMLParagraphElement = document.createElement("p");
                 questionText.classList.add("question-text");
-                questionText.textContent = `Otázka ${i + 1}: ${test.otazky[i].text}`;
+                questionText.textContent = `Question ${i + 1}.: ${test.otazky[i].text}`;
                 
                 const answersDiv: HTMLDivElement = document.createElement("div");
                 answersDiv.classList.add("answers");

@@ -12,7 +12,7 @@ if (testId != null) {
                 questionDiv.classList.add("question");
                 const questionText = document.createElement("p");
                 questionText.classList.add("question-text");
-                questionText.textContent = `Otázka ${i + 1}: ${test.otazky[i].text}`;
+                questionText.textContent = `Question ${i + 1}.: ${test.otazky[i].text}`;
                 const answersDiv = document.createElement("div");
                 answersDiv.classList.add("answers");
                 test.otazky[i].odpovede.forEach((odpoved) => {
