@@ -9,7 +9,7 @@ const test: Test = {
 };
 
 const otazkyContainer = document.getElementById("otazky-container");
-const saveBtn = document.querySelector("#save");
+const saveBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#save");
 const addQuestionButton = document.getElementById("add-question");
 addQuestionButton?.addEventListener("click", () => {
     addOtazka();
@@ -82,7 +82,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
     otazkaDiv.appendChild(otazkaLabel);
     otazkaDiv.appendChild(otazkaInput);
     otazkaDiv.appendChild(odpovedeDiv);
-    
+
     const hr: HTMLHRElement = document.createElement("hr")
     otazkaDiv.appendChild(hr);
 
@@ -90,7 +90,21 @@ function renderOtazka(otazka: Otazka, index: number): void {
 }
 
 
+saveBtn.addEventListener("click", () => {
+    // Získame hodnotu názvu testu z inputu
+    const nazovInput: HTMLInputElement = <HTMLInputElement>document.getElementById("nazov");
+    test.nazov = nazovInput.value;
 
-saveBtn?.addEventListener("click", () => {
+    // Prechádzame otázky a odpovede a uložíme text odpovedí do objektu odpovede
+    test.otazky.forEach((otazka) => {
+        otazka.odpovede.forEach((odpoved, index) => {
+            const odpovedInput: HTMLInputElement = <HTMLInputElement>document.querySelector(`#otazka-${index}-odpoved-${index}-text`);
+            odpoved.text = odpovedInput.value;
+        });
+    });
 
+    // Vypíšeme test do konzoly
+    console.log(test);
+
+    // Tu môžete ďalej manipulovať s testom, napríklad ho poslať na server alebo urobiť s ním čo potrebujete
 });

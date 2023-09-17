@@ -64,6 +64,19 @@ function renderOtazka(otazka, index) {
     otazkaDiv.appendChild(hr);
     otazkyContainer?.appendChild(otazkaDiv);
 }
-saveBtn?.addEventListener("click", () => {
+saveBtn.addEventListener("click", () => {
+    // Získame hodnotu názvu testu z inputu
+    const nazovInput = document.getElementById("nazov");
+    test.nazov = nazovInput.value;
+    // Prechádzame otázky a odpovede a uložíme text odpovedí do objektu odpovede
+    test.otazky.forEach((otazka) => {
+        otazka.odpovede.forEach((odpoved, index) => {
+            const odpovedInput = document.querySelector(`#otazka-${index}-odpoved-${index}-text`);
+            odpoved.text = odpovedInput.value;
+        });
+    });
+    // Vypíšeme test do konzoly
+    console.log(test);
+    // Tu môžete ďalej manipulovať s testom, napríklad ho poslať na server alebo urobiť s ním čo potrebujete
 });
 export {};
