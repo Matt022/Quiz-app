@@ -5,7 +5,7 @@ body {
     padding: 0;
 }
 
-.test-container {
+div.test-container {
     background-color: #fff;
     max-width: 600px;
     margin: 20px auto;
@@ -14,16 +14,22 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
+div.test-container h1 {
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-form {
+div.test-container form {
     margin-bottom: 20px;
 }
 
-label {
+div.test-container form div.question-container {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+div.test-container form div.question-container label {
     display: block;
     margin-bottom: 10px;
 }

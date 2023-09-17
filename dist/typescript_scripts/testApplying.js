@@ -5,6 +5,7 @@ const quizId = getQuizIdFromURL();
 if (quizId != null) {
     // Načítame test s ID pomocou funkcie getTestById
     getTestById(quizId).then((test) => {
+        let saveCorrectAnswers = [];
         // Funkcia na generovanie otázok a odpovedí z JSON
         function generateQuestionsAndAnswers() {
             // Uložíme načítaný test do premennej testHere
@@ -45,8 +46,8 @@ if (quizId != null) {
                     }
                     form.appendChild(questionContainer);
                 }
-                // Uložíme pole správnych odpovedí ako atribút dátového súboru
-                form.dataset.correctAnswers = JSON.stringify(correctAnswers);
+                // Uložíme pole správnych odpovedí ako pole hodnôt
+                saveCorrectAnswers = correctAnswers;
             }
         }
         // Spustíme generovanie otázok pre test s ID 0
@@ -57,7 +58,7 @@ if (quizId != null) {
             const totalQuestions = test.otazky.length; // Počet otázok v teste
             let correctAnswers = 0;
             // Získame pole správnych odpovedí zo dátového súboru
-            const correctAnswersArray = JSON.parse(form.dataset.correctAnswers || '[]');
+            const correctAnswersArray = saveCorrectAnswers;
             // Prejdeme všetky otázky a zkontrolujeme správne odpovede
             for (let i = 0; i < totalQuestions; i++) {
                 const selectedAnswer = form.querySelector(`input[name="question-${i}"]:checked`);
@@ -68,6 +69,7 @@ if (quizId != null) {
             // Vypočítame percentuálne hodnotenie a zobrazíme ho v upozornení
             const scorePercentage = (correctAnswers / totalQuestions) * 100;
             alert(`Váš výsledok je ${scorePercentage.toFixed(2)}%`);
+            form.reset();
         }
         // Pridáme funkciu pre odoslanie testu na tlačítko
         const submitButton = document.getElementById('submit-button');

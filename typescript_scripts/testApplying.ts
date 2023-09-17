@@ -9,6 +9,9 @@ const quizId: number | null = getQuizIdFromURL();
 if (quizId != null) {
     // Načítame test s ID pomocou funkcie getTestById
     getTestById(quizId).then((test: Test | null) => {
+
+        let saveCorrectAnswers: CorrectAnswer[] = [];
+
         // Funkcia na generovanie otázok a odpovedí z JSON
         function generateQuestionsAndAnswers(): void {
             // Uložíme načítaný test do premennej testHere
@@ -59,8 +62,8 @@ if (quizId != null) {
                     form.appendChild(questionContainer);
                 }
 
-                // Uložíme pole správnych odpovedí ako atribút dátového súboru
-                form.dataset.correctAnswers = JSON.stringify(correctAnswers);
+                // Uložíme pole správnych odpovedí ako pole hodnôt
+                saveCorrectAnswers = correctAnswers;
             }
         }
 
@@ -74,12 +77,12 @@ if (quizId != null) {
             let correctAnswers: number = 0;
 
             // Získame pole správnych odpovedí zo dátového súboru
-            const correctAnswersArray: CorrectAnswer[] = JSON.parse(form.dataset.correctAnswers || '[]');
+            const correctAnswersArray: CorrectAnswer[] = saveCorrectAnswers;
 
             // Prejdeme všetky otázky a zkontrolujeme správne odpovede
             for (let i: number = 0; i < totalQuestions; i++) {
                 const selectedAnswer: HTMLInputElement = <HTMLInputElement>form.querySelector(`input[name="question-${i}"]:checked`);
-                if (selectedAnswer && correctAnswersArray.some((answer: any) => answer.question === i && answer.answer === parseInt(selectedAnswer.value))) {
+                if (selectedAnswer && correctAnswersArray.some((answer: CorrectAnswer) => answer.question === i && answer.answer === parseInt(selectedAnswer.value))) {
                     correctAnswers++;
                 }
             }
@@ -87,6 +90,7 @@ if (quizId != null) {
             // Vypočítame percentuálne hodnotenie a zobrazíme ho v upozornení
             const scorePercentage: number = (correctAnswers / totalQuestions) * 100;
             alert(`Váš výsledok je ${scorePercentage.toFixed(2)}%`);
+            form.reset();
         }
 
         // Pridáme funkciu pre odoslanie testu na tlačítko
