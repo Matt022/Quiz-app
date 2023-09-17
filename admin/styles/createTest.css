@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label,
+input,
+button {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button[type="button"] {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+#otazky-container {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.otazka {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.odpoved {
+    margin-left: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+}

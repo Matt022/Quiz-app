@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a test</title>
+</head>
+
+<body>
+    <header>
+        <h1>Create a test</h1>
+    </header>
+    <hr>
+    <main>
+        <section class="main-container">
+            <h1>Pridať Test</h1>
+            <div id="test-form">
+                <label for="nazov">Názov testu:</label>
+                <input type="text" id="nazov" required>
+            
+                <h2>Otázky:</h2>
+                <div id="otazky-container"></div>
+            
+                <button type="button" id="add-question">Pridať otázku</button>
+                <button id="save" type="button">Uložiť test</button>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="/dist/admin/scripts/createTest.js"></script>
+</body>
+
+</html>
