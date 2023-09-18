@@ -5,6 +5,7 @@ import { getQuizIdFromURL } from "./helpers.js";
 
 const deleteTestBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button.deleteTest");
 const editTestBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button.editTest");
+const disableChangesBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button.disableChanges");
 
 const testId: number | null = getQuizIdFromURL();
 if (testId != null) {
@@ -68,4 +69,15 @@ editTestBtn.addEventListener("click", () => {
     const questionsDivEl: HTMLDivElement = <HTMLDivElement>document.getElementById("questions");
     questionsDivEl.style.display = "none";
     editTestBtn.style.display = "none";
+    disableChangesBtn.style.display = "inline-block";
+});
+
+disableChangesBtn.addEventListener("click", () => {
+    const testNameElement: HTMLSpanElement = <HTMLSpanElement>document.getElementById("testName");
+    testNameElement.contentEditable = "false";
+
+    const questionsDivEl: HTMLDivElement = <HTMLDivElement>document.getElementById("questions");
+    questionsDivEl.style.display = "block";
+    editTestBtn.style.display = "inline-block";
+    disableChangesBtn.style.display = "none";
 });

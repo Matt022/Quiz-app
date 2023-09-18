@@ -2,6 +2,7 @@ import { deleteTest, getTestById } from "./dbService.js";
 import { getQuizIdFromURL } from "./helpers.js";
 const deleteTestBtn = document.querySelector("button.deleteTest");
 const editTestBtn = document.querySelector("button.editTest");
+const disableChangesBtn = document.querySelector("button.disableChanges");
 const testId = getQuizIdFromURL();
 if (testId != null) {
     getTestById(testId).then((test) => {
@@ -54,4 +55,13 @@ editTestBtn.addEventListener("click", () => {
     const questionsDivEl = document.getElementById("questions");
     questionsDivEl.style.display = "none";
     editTestBtn.style.display = "none";
+    disableChangesBtn.style.display = "inline-block";
+});
+disableChangesBtn.addEventListener("click", () => {
+    const testNameElement = document.getElementById("testName");
+    testNameElement.contentEditable = "false";
+    const questionsDivEl = document.getElementById("questions");
+    questionsDivEl.style.display = "block";
+    editTestBtn.style.display = "inline-block";
+    disableChangesBtn.style.display = "none";
 });

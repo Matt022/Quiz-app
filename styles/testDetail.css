@@ -71,6 +71,16 @@ body {
     color: white;
 }
 
+.test div.buttons button.disableChanges {
+    color: black;
+    display: none;
+}
+
+.test div.buttons button.disableChanges:hover {
+    background-color: black;
+    color: white;
+}
+
 .test h1 {
     font-size: 24px;
 }
