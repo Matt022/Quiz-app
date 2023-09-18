@@ -4,6 +4,7 @@ import { deleteTest, getTestById } from "./dbService.js";
 import { getQuizIdFromURL } from "./helpers.js";
 
 const deleteTestBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button.deleteTest");
+const editTestBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button.editTest");
 
 const testId: number | null = getQuizIdFromURL();
 if (testId != null) {
@@ -20,7 +21,7 @@ if (testId != null) {
                 
                 const questionText: HTMLParagraphElement = document.createElement("p");
                 questionText.classList.add("question-text");
-                questionText.textContent = `Question ${i + 1}.: ${test.otazky[i].text}`;
+                questionText.textContent = `Question ${i + 1}: ${test.otazky[i].text}`;
                 
                 const answersDiv: HTMLDivElement = document.createElement("div");
                 answersDiv.classList.add("answers");
@@ -58,4 +59,13 @@ deleteTestBtn.addEventListener("click", () => {
             alert("Test bol úspešne zmazaný");
         });
     }
+});
+
+editTestBtn.addEventListener("click", () => {
+    const testNameElement: HTMLSpanElement = <HTMLSpanElement>document.getElementById("testName");
+    testNameElement.contentEditable = "true";
+    
+    const questionsDivEl: HTMLDivElement = <HTMLDivElement>document.getElementById("questions");
+    questionsDivEl.style.display = "none";
+    editTestBtn.style.display = "none";
 });
