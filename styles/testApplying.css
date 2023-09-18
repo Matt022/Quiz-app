@@ -44,7 +44,8 @@ input[type="radio"] {
     margin-right: 5px;
 }
 
-div.test-container button {
+div.test-container button,
+div.test-container a {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;
@@ -52,13 +53,16 @@ div.test-container button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 17px;
+    text-decoration: none;
 }
 
-div.test-container button:hover {
+div.test-container button:hover,
+div.test-container a:hover {
     background-color: #0056b3;
 }
 
-div.test-container button i {
+div.test-container button i,
+div.test-container a i {
     font-size: 25px;
     margin-right: 10px;
 }

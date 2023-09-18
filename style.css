@@ -25,10 +25,12 @@ main section.main-container div.testHolder {
     margin: 20px 10px;
     border: 1px solid black;
     padding: 25px;
+    width: 300px;
 }
 
 main section.main-container div.testHolder h2 {
     margin-top: 0;
+    height: 50px;
 }
 
 main section.main-container div.testHolder p {
