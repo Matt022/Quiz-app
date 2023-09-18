@@ -24,33 +24,50 @@ if (quizId != null) {
                     const questionText = document.createElement('label');
                     questionText.textContent = `${i + 1}. ${testHere.otazky[i].text}`;
                     questionContainer.appendChild(questionText);
+                    const correctAnswersForQuestion = []; // Pole pre uchovávanie správnych odpovedí pre túto otázku
+                    let spravneOdpovedeCounter = 0;
+                    testHere.otazky[i].odpovede.forEach((odpoved) => {
+                        if (odpoved.jeSpravna) {
+                            spravneOdpovedeCounter++;
+                        }
+                    });
                     // Prejdeme všetky odpovede na otázku
                     for (let j = 0; j < testHere.otazky[i].odpovede.length; j++) {
-                        // Vytvoríme značku pre odpoveď a radio tlačidlo
+                        // Vytvoríme značku pre odpoveď a checkbox
                         const answerLabel = document.createElement('label');
-                        const radioInput = document.createElement('input');
-                        radioInput.type = 'radio';
-                        radioInput.name = `question-${i}`; // Jedinečný názov pre každú otázku
-                        radioInput.value = j.toString(); // Použijeme hodnotu indexu odpovede ako hodnotu
-                        // Ak je odpoveď správna, pridajte ju do poľa správnych odpovedí
+                        const checkboxInput = document.createElement('input');
+                        if (spravneOdpovedeCounter > 1) {
+                            checkboxInput.type = 'checkbox';
+                        }
+                        else {
+                            checkboxInput.type = 'radio';
+                        }
+                        checkboxInput.name = `question-${i}`; // Jedinečný názov pre každú otázku
+                        checkboxInput.value = j.toString(); // Použijeme hodnotu indexu odpovede ako hodnotu
+                        // Ak je odpoveď správna, pridajte ju do poľa správnych odpovedí pre túto otázku
                         if (testHere.otazky[i].odpovede[j].jeSpravna) {
                             const correctAnsw = {
                                 question: i,
                                 answer: j
                             };
-                            correctAnswers.push(correctAnsw);
+                            correctAnswersForQuestion.push(correctAnsw);
                         }
-                        answerLabel.appendChild(radioInput);
+                        answerLabel.appendChild(checkboxInput);
                         answerLabel.appendChild(document.createTextNode(testHere.otazky[i].odpovede[j].text));
                         questionContainer.appendChild(answerLabel);
                     }
+                    // Uložíme pole správnych odpovedí pre túto otázku do globálneho poľa
+                    correctAnswers.push(...correctAnswersForQuestion);
                     form.appendChild(questionContainer);
                 }
                 // Uložíme pole správnych odpovedí ako pole hodnôt
                 saveCorrectAnswers = correctAnswers;
             }
+            else {
+                window.location.href = "../index.html";
+            }
         }
-        // Spustíme generovanie otázok pre test s ID 0
+        // Spustíme generovanie otázok pre test s ID v URL-ke
         generateQuestionsAndAnswers();
         // Funkcia na výpočet percentuálneho hodnotenia a zobrazenie alertu
         function calculateAndShowResult() {
@@ -61,8 +78,13 @@ if (quizId != null) {
             const correctAnswersArray = saveCorrectAnswers;
             // Prejdeme všetky otázky a zkontrolujeme správne odpovede
             for (let i = 0; i < totalQuestions; i++) {
-                const selectedAnswer = form.querySelector(`input[name="question-${i}"]:checked`);
-                if (selectedAnswer && correctAnswersArray.some((answer) => answer.question === i && answer.answer === parseInt(selectedAnswer.value))) {
+                const selectedAnswers = form.querySelectorAll(`input[name="question-${i}"]:checked`);
+                const correctAnswersForQuestion = correctAnswersArray.filter((answer) => answer.question === i);
+                // Získame počet označených správnych odpovedí
+                const selectedCorrectAnswers = Array.from(selectedAnswers)
+                    .filter(selectedAnswer => correctAnswersForQuestion.some(correctAnswer => correctAnswer.answer === parseInt(selectedAnswer.value))).length;
+                // Ak boli všetky správne odpovede označené a neboli označené nadbytočné odpovede, pridáme bod
+                if (selectedCorrectAnswers === correctAnswersForQuestion.length && selectedAnswers.length === correctAnswersForQuestion.length) {
                     correctAnswers++;
                 }
             }
@@ -75,4 +97,7 @@ if (quizId != null) {
         const submitButton = document.getElementById('submit-button');
         submitButton.addEventListener('click', calculateAndShowResult);
     });
+}
+else {
+    window.location.href = "../index.html";
 }

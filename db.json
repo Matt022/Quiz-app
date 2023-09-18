@@ -45,6 +45,15 @@
                         { "text": "8", "jeSpravna": false },
                         { "text": "5", "jeSpravna": false }
                     ]
+                },
+                {
+                    "text": "Trendy programovacie jazyky?",
+                    "odpovede": [
+                        { "text": "C#", "jeSpravna": true },
+                        { "text": "Python", "jeSpravna": true },
+                        { "text": "Fortran", "jeSpravna": false },
+                        { "text": "Assembler", "jeSpravna": false }
+                    ]
                 }
             ]
         }

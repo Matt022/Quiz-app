@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/admin/styles/createTest.css">
     <title>Create a test</title>
 </head>
 
@@ -16,14 +17,16 @@
         <section class="main-container">
             <h1>Pridať Test</h1>
             <div id="test-form">
-                <label for="nazov">Názov testu:</label>
-                <input type="text" id="nazov" required>
+                <label for="nazov">Názov testu:</label><br>
+                <input type="text" id="nazov" required placeholder="Názov testu">
             
                 <h2>Otázky:</h2>
                 <div id="otazky-container"></div>
             
-                <button type="button" id="add-question">Pridať otázku</button>
-                <button id="save" type="button">Uložiť test</button>
+                <div class="buttons">
+                    <button type="button" id="add-question">Pridať otázku</button>
+                    <button id="save" type="button">Uložiť test</button>
+                </div>
             </div>
         </section>
     </main>

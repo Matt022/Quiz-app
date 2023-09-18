@@ -30,6 +30,8 @@ function addOtazka(): void {
     renderOtazka(otazka, test.otazky.length - 1);
 }
 
+addOtazka()
+
 function renderOtazka(otazka: Otazka, index: number): void {
     const otazkaDiv: HTMLDivElement = document.createElement("div");
     otazkaDiv.className = "otazka";
@@ -40,6 +42,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
     const otazkaInput: HTMLInputElement = document.createElement("input");
     otazkaInput.type = "text";
     otazkaInput.value = otazka.text;
+    otazkaInput.placeholder = "Znenie otázky"
     otazkaInput.addEventListener("input", (e: Event) => {
         otazka.text = (e.target as HTMLInputElement).value;
     });
@@ -53,6 +56,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
 
         const odpovedInput: HTMLInputElement = document.createElement("input");
         odpovedInput.type = "text";
+        odpovedInput.placeholder = "Odpoved"
         odpovedInput.value = odpoved ? odpoved.text : "";
 
         // Vytvorme nový objekt odpovede v každej iterácii
@@ -76,14 +80,21 @@ function renderOtazka(otazka: Otazka, index: number): void {
         spravnaOdpovedLabel.textContent = "Správna odpoveď";
 
         odpovedDiv.appendChild(odpovedInput);
-        odpovedDiv.appendChild(spravnaOdpovedLabel);
-        odpovedDiv.appendChild(spravnaOdpovedInput);
+        
+        const spravnaOdpovedDiv: HTMLDivElement = document.createElement("div");
+        spravnaOdpovedDiv.classList.add("spravnaOdpovedDiv");
+        spravnaOdpovedDiv.appendChild(spravnaOdpovedLabel);
+        spravnaOdpovedDiv.appendChild(spravnaOdpovedInput);
+        odpovedDiv.appendChild(spravnaOdpovedDiv);
 
         odpovedeDiv.appendChild(odpovedDiv);
         otazka.odpovede[currentI] = novaOdpoved;
     }
 
+    const brElement: HTMLBRElement = document.createElement("br")
+
     otazkaDiv.appendChild(otazkaLabel);
+    otazkaDiv.appendChild(brElement);
     otazkaDiv.appendChild(otazkaInput);
     otazkaDiv.appendChild(odpovedeDiv);
 
@@ -120,12 +131,22 @@ saveBtn.addEventListener("click", () => {
         const odpovedeInputs: NodeListOf<HTMLInputElement> = otazkyDivs[i].querySelectorAll(".odpoved input[type='text']");
         const spravneInputs: NodeListOf<HTMLInputElement> = otazkyDivs[i].querySelectorAll(".odpoved input[type='checkbox']");
 
+        let spravneOdpovedeCounter: number = 0;
+        
         for (let j: number = 0; j < odpovedeInputs.length; j++) {
+            if (spravneInputs[j].checked) {
+                spravneOdpovedeCounter++;
+            }
             const odpoved: Odpoved = {
                 text: odpovedeInputs[j].value,
                 jeSpravna: spravneInputs[j].checked,
             };
             otazka.odpovede.push(odpoved);
+        }
+
+        if (spravneOdpovedeCounter > 1) {
+            alert("To nemožeš");
+            return;
         }
 
         otazky.push(otazka);

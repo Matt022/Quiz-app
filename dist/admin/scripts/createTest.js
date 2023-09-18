@@ -22,6 +22,7 @@ function addOtazka() {
     test.otazky.push(otazka);
     renderOtazka(otazka, test.otazky.length - 1);
 }
+addOtazka();
 function renderOtazka(otazka, index) {
     const otazkaDiv = document.createElement("div");
     otazkaDiv.className = "otazka";
@@ -30,6 +31,7 @@ function renderOtazka(otazka, index) {
     const otazkaInput = document.createElement("input");
     otazkaInput.type = "text";
     otazkaInput.value = otazka.text;
+    otazkaInput.placeholder = "Znenie otázky";
     otazkaInput.addEventListener("input", (e) => {
         otazka.text = e.target.value;
     });
@@ -40,6 +42,7 @@ function renderOtazka(otazka, index) {
         odpovedDiv.className = "odpoved";
         const odpovedInput = document.createElement("input");
         odpovedInput.type = "text";
+        odpovedInput.placeholder = "Odpoved";
         odpovedInput.value = odpoved ? odpoved.text : "";
         // Vytvorme nový objekt odpovede v každej iterácii
         const novaOdpoved = {
@@ -57,12 +60,17 @@ function renderOtazka(otazka, index) {
         const spravnaOdpovedLabel = document.createElement("label");
         spravnaOdpovedLabel.textContent = "Správna odpoveď";
         odpovedDiv.appendChild(odpovedInput);
-        odpovedDiv.appendChild(spravnaOdpovedLabel);
-        odpovedDiv.appendChild(spravnaOdpovedInput);
+        const spravnaOdpovedDiv = document.createElement("div");
+        spravnaOdpovedDiv.classList.add("spravnaOdpovedDiv");
+        spravnaOdpovedDiv.appendChild(spravnaOdpovedLabel);
+        spravnaOdpovedDiv.appendChild(spravnaOdpovedInput);
+        odpovedDiv.appendChild(spravnaOdpovedDiv);
         odpovedeDiv.appendChild(odpovedDiv);
         otazka.odpovede[currentI] = novaOdpoved;
     }
+    const brElement = document.createElement("br");
     otazkaDiv.appendChild(otazkaLabel);
+    otazkaDiv.appendChild(brElement);
     otazkaDiv.appendChild(otazkaInput);
     otazkaDiv.appendChild(odpovedeDiv);
     const hr = document.createElement("hr");
@@ -90,12 +98,20 @@ saveBtn.addEventListener("click", () => {
         // správne odpovede zistíme vo for cykle nižšie
         const odpovedeInputs = otazkyDivs[i].querySelectorAll(".odpoved input[type='text']");
         const spravneInputs = otazkyDivs[i].querySelectorAll(".odpoved input[type='checkbox']");
+        let spravneOdpovedeCounter = 0;
         for (let j = 0; j < odpovedeInputs.length; j++) {
+            if (spravneInputs[j].checked) {
+                spravneOdpovedeCounter++;
+            }
             const odpoved = {
                 text: odpovedeInputs[j].value,
                 jeSpravna: spravneInputs[j].checked,
             };
             otazka.odpovede.push(odpoved);
+        }
+        if (spravneOdpovedeCounter > 1) {
+            alert("To nemožeš");
+            return;
         }
         otazky.push(otazka);
     }

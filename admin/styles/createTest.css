@@ -5,27 +5,44 @@ body {
     font-family: Arial, sans-serif;
 }
 
-form {
-    max-width: 600px;
+input[type="text"] {
+    width: 31%;
+    padding: 10px;
+}
+
+input[type="checkbox"] {
+    transform: scale(1.6);
+}
+
+main {
+    padding: 30px;
+}
+
+main section.main-container {
+    border: 1px solid red;
+    padding: 20px;
+}
+
+main section.main-container div#test-form {
     margin: 0 auto;
 }
 
-label,
-input,
-button {
-    display: block;
-    margin-bottom: 10px;
+main section.main-container div#test-form div.buttons {
+    display: flex;
+    width: 230px;
+    justify-content: space-between;
 }
 
-button[type="button"] {
+main section.main-container div#test-form div.buttons button {
     background-color: #008CBA;
+    border-radius: 7px;
     color: white;
     border: none;
     padding: 10px 20px;
     cursor: pointer;
 }
 
-button[type="submit"] {
+main section.main-container div#test-form div.buttons button#save {
     background-color: #4CAF50;
     color: white;
     border: none;
@@ -34,20 +51,41 @@ button[type="submit"] {
 }
 
 #otazky-container {
-    border: 1px solid #ddd;
+    /* border: 1px solid #ddd; */
     padding: 10px;
 }
 
 .otazka {
-    border-bottom: 1px solid #ddd;
     padding: 10px 0;
 }
 
-.odpoved {
-    margin-left: 20px;
+.otazka > input {
+    margin-bottom: 30px;
 }
 
-input[type="text"] {
-    width: 100%;
+.otazka > div {
+    margin-bottom: 20px;
+} 
+
+.odpoved {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+    width: 30%;
+}
+
+.odpoved > input {
+    width: 300px;
+}
+
+.spravnaOdpovedDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
+    
+    width: 170px;
+    border: 1px solid red;
 }
