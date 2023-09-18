@@ -16,10 +16,13 @@ input[type="checkbox"] {
 
 main {
     padding: 30px;
+    background-color: #f1f1f1;
 }
 
 main section.main-container {
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    border-radius: 20px;
+    background-color: #ffffff;
     padding: 20px;
 }
 
@@ -51,29 +54,35 @@ main section.main-container div#test-form div.buttons button#save {
 }
 
 #otazky-container {
-    /* border: 1px solid #ddd; */
     padding: 10px;
 }
 
 .otazka {
-    padding: 10px 0;
+    padding: 10px;
+    width: 700px;
+    border: 1px solid black;
 }
 
-.otazka > input {
+.otazka > label {
+    margin-left: 20px;
+}
+
+.otazka>input {
+    width: 300px;
     margin-bottom: 30px;
+    margin-left: 20px;
 }
 
-.otazka > div {
+.otazka>div {
     margin-bottom: 20px;
-} 
+}
 
 .odpoved {
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 1px solid black;
-    width: 30%;
+    width: 90%;
 }
 
 .odpoved > input {
@@ -85,7 +94,7 @@ main section.main-container div#test-form div.buttons button#save {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    
+
     width: 170px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }

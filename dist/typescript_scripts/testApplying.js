@@ -14,6 +14,8 @@ if (quizId != null) {
             const form = document.getElementById('test-form');
             // Skontrolujeme, či sme načítali platný test
             if (testHere) {
+                const testDetailName = document.getElementById("testDetail");
+                testDetailName.textContent = testHere.nazov;
                 const correctAnswers = []; // Pole pre uchovávanie informácií o správnych odpovediach
                 // Prejdeme všetky otázky v teste
                 for (let i = 0; i < testHere.otazky.length; i++) {

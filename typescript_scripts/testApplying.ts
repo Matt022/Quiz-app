@@ -12,16 +12,18 @@ if (quizId != null) {
     getTestById(quizId).then((test: Test | null) => {
 
         let saveCorrectAnswers: CorrectAnswer[] = [];
-
+        
         // Funkcia na generovanie otázok a odpovedí z JSON
         function generateQuestionsAndAnswers(): void {
             // Uložíme načítaný test do premennej testHere
             const testHere: Test | null = test;
             // Získame odkaz na HTML formulár s id "test-form"
             const form: HTMLFormElement = document.getElementById('test-form') as HTMLFormElement;
-
+            
             // Skontrolujeme, či sme načítali platný test
             if (testHere) {
+                const testDetailName: HTMLSpanElement = <HTMLSpanElement>document.getElementById("testDetail");
+                testDetailName.textContent = testHere.nazov;
                 const correctAnswers: CorrectAnswer[] = []; // Pole pre uchovávanie informácií o správnych odpovediach
 
                 // Prejdeme všetky otázky v teste

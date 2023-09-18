@@ -34,6 +34,12 @@ div.test-container form div.question-container label {
     margin-bottom: 10px;
 }
 
+div.test-container form div.question-container label:first-child {
+    font-weight: bold;
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+}
+
 input[type="radio"] {
     margin-right: 5px;
 }

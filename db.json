@@ -1,61 +1,190 @@
 {
-    "tests": [
+  "tests": [
+    {
+      "id": 0,
+      "nazov": "MojTest",
+      "otazky": [
         {
-            "id": 0,
-            "nazov": "MojTest",
-            "otazky": [
-                {
-                    "text": "Čo je hlavné mesto Slovenska?",
-                    "odpovede": [
-                        { "text": "Bratislava", "jeSpravna": true },
-                        { "text": "Praha", "jeSpravna": false },
-                        { "text": "Budapešť", "jeSpravna": false },
-                        { "text": "Varšava", "jeSpravna": false }
-                    ]
-                },
-                {
-                    "text": "Koľko je 2 + 2?",
-                    "odpovede": [
-                        { "text": "1", "jeSpravna": false },
-                        { "text": "3", "jeSpravna": false },
-                        { "text": "4", "jeSpravna": true },
-                        { "text": "5", "jeSpravna": false }
-                    ]
-                }
-            ]
+          "text": "Čo je hlavné mesto Slovenska?",
+          "odpovede": [
+            {
+              "text": "Bratislava",
+              "jeSpravna": true
+            },
+            {
+              "text": "Praha",
+              "jeSpravna": false
+            },
+            {
+              "text": "Budapešť",
+              "jeSpravna": false
+            },
+            {
+              "text": "Varšava",
+              "jeSpravna": false
+            }
+          ]
         },
         {
-            "id": 1,
-            "nazov": "Test 1",
-            "otazky": [
-                {
-                    "text": "Čo je hlavné mesto Francúzska?",
-                    "odpovede": [
-                        { "text": "Paríž", "jeSpravna": true },
-                        { "text": "Londýn", "jeSpravna": false },
-                        { "text": "Berlín", "jeSpravna": false },
-                        { "text": "Madrid", "jeSpravna": false }
-                    ]
-                },
-                {
-                    "text": "Koľko je 3 + 3?",
-                    "odpovede": [
-                        { "text": "6", "jeSpravna": true },
-                        { "text": "7", "jeSpravna": false },
-                        { "text": "8", "jeSpravna": false },
-                        { "text": "5", "jeSpravna": false }
-                    ]
-                },
-                {
-                    "text": "Trendy programovacie jazyky?",
-                    "odpovede": [
-                        { "text": "C#", "jeSpravna": true },
-                        { "text": "Python", "jeSpravna": true },
-                        { "text": "Fortran", "jeSpravna": false },
-                        { "text": "Assembler", "jeSpravna": false }
-                    ]
-                }
-            ]
+          "text": "Koľko je 2 + 2?",
+          "odpovede": [
+            {
+              "text": "1",
+              "jeSpravna": false
+            },
+            {
+              "text": "3",
+              "jeSpravna": false
+            },
+            {
+              "text": "4",
+              "jeSpravna": true
+            },
+            {
+              "text": "5",
+              "jeSpravna": false
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": 1,
+      "nazov": "Test 1",
+      "otazky": [
+        {
+          "text": "Čo je hlavné mesto Francúzska?",
+          "odpovede": [
+            {
+              "text": "Paríž",
+              "jeSpravna": true
+            },
+            {
+              "text": "Londýn",
+              "jeSpravna": false
+            },
+            {
+              "text": "Berlín",
+              "jeSpravna": false
+            },
+            {
+              "text": "Madrid",
+              "jeSpravna": false
+            }
+          ]
+        },
+        {
+          "text": "Koľko je 3 + 3?",
+          "odpovede": [
+            {
+              "text": "6",
+              "jeSpravna": true
+            },
+            {
+              "text": "7",
+              "jeSpravna": false
+            },
+            {
+              "text": "8",
+              "jeSpravna": false
+            },
+            {
+              "text": "5",
+              "jeSpravna": false
+            }
+          ]
+        },
+        {
+          "text": "Trendy programovacie jazyky?",
+          "odpovede": [
+            {
+              "text": "C#",
+              "jeSpravna": true
+            },
+            {
+              "text": "Python",
+              "jeSpravna": true
+            },
+            {
+              "text": "Fortran",
+              "jeSpravna": false
+            },
+            {
+              "text": "Assembler",
+              "jeSpravna": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nazov": "Test o Sieťach a Bezpečnosti IT",
+      "otazky": [
+        {
+          "text": "Čo je firewall?",
+          "odpovede": [
+            {
+              "text": "Systém na ochranu siete pred neoprávneným prístupom.",
+              "jeSpravna": true
+            },
+            {
+              "text": "Typ zápalnej steny v počítači.",
+              "jeSpravna": false
+            },
+            {
+              "text": "Špeciálny druh internetového prehliadača.",
+              "jeSpravna": false
+            },
+            {
+              "text": "Mobilná aplikácia na sledovanie počasie.",
+              "jeSpravna": false
+            }
+          ]
+        },
+        {
+          "text": "Čo je phishing?",
+          "odpovede": [
+            {
+              "text": "Spôsob lovu ryb.",
+              "jeSpravna": false
+            },
+            {
+              "text": "Útok, pri ktorom sa podvodne získavajú citlivé informácie.",
+              "jeSpravna": true
+            },
+            {
+              "text": "Typ antivírusového softvéru.",
+              "jeSpravna": false
+            },
+            {
+              "text": "Nový druh sociálnej siete.",
+              "jeSpravna": false
+            }
+          ]
+        },
+        {
+          "text": "Aká je hlavná funkcia VPN (Virtual Private Network)?",
+          "odpovede": [
+            {
+              "text": "Rýchle stahovanie veľkých súborov.",
+              "jeSpravna": false
+            },
+            {
+              "text": "Typ bezdrôtového smerovača.",
+              "jeSpravna": false
+            },
+            {
+              "text": "Zabezpečené pripojenie na vzdialenú sieť cez internet.",
+              "jeSpravna": true
+            },
+            {
+              "text": "Šifrovanie e-mailových správ.",
+              "jeSpravna": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -1,6 +1,7 @@
 import { Odpoved } from "../../typescript_models/odpoved";
 import { Otazka } from "../../typescript_models/otazka";
 import { Test } from '../../typescript_models/test';
+import { addTest } from "../../typescript_scripts/dbService.js";
 
 const test: Test = {
     id: 0,
@@ -77,7 +78,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
         });
 
         const spravnaOdpovedLabel: HTMLLabelElement = document.createElement("label");
-        spravnaOdpovedLabel.textContent = "Správna odpoveď";
+        spravnaOdpovedLabel.textContent = "Correct answer";
 
         odpovedDiv.appendChild(odpovedInput);
         
@@ -92,14 +93,13 @@ function renderOtazka(otazka: Otazka, index: number): void {
     }
 
     const brElement: HTMLBRElement = document.createElement("br")
+    const hr: HTMLHRElement = document.createElement("hr");
 
     otazkaDiv.appendChild(otazkaLabel);
     otazkaDiv.appendChild(brElement);
     otazkaDiv.appendChild(otazkaInput);
-    otazkaDiv.appendChild(odpovedeDiv);
-
-    const hr: HTMLHRElement = document.createElement("hr")
     otazkaDiv.appendChild(hr);
+    otazkaDiv.appendChild(odpovedeDiv);
 
     otazkyContainer.appendChild(otazkaDiv);
 }
@@ -144,15 +144,13 @@ saveBtn.addEventListener("click", () => {
             otazka.odpovede.push(odpoved);
         }
 
-        if (spravneOdpovedeCounter > 1) {
-            alert("To nemožeš");
-            return;
-        }
-
         otazky.push(otazka);
     }
 
     test.otazky = otazky;
 
     console.log(test);
+    addTest(test).then(() => {
+        alert("Test was added to database.");
+    });
 });

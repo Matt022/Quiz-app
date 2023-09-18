@@ -1,3 +1,4 @@
+import { addTest } from "../../typescript_scripts/dbService.js";
 const test = {
     id: 0,
     nazov: "",
@@ -58,7 +59,7 @@ function renderOtazka(otazka, index) {
             novaOdpoved.jeSpravna = e.target.checked;
         });
         const spravnaOdpovedLabel = document.createElement("label");
-        spravnaOdpovedLabel.textContent = "Správna odpoveď";
+        spravnaOdpovedLabel.textContent = "Correct answer";
         odpovedDiv.appendChild(odpovedInput);
         const spravnaOdpovedDiv = document.createElement("div");
         spravnaOdpovedDiv.classList.add("spravnaOdpovedDiv");
@@ -69,12 +70,12 @@ function renderOtazka(otazka, index) {
         otazka.odpovede[currentI] = novaOdpoved;
     }
     const brElement = document.createElement("br");
+    const hr = document.createElement("hr");
     otazkaDiv.appendChild(otazkaLabel);
     otazkaDiv.appendChild(brElement);
     otazkaDiv.appendChild(otazkaInput);
-    otazkaDiv.appendChild(odpovedeDiv);
-    const hr = document.createElement("hr");
     otazkaDiv.appendChild(hr);
+    otazkaDiv.appendChild(odpovedeDiv);
     otazkyContainer.appendChild(otazkaDiv);
 }
 saveBtn.addEventListener("click", () => {
@@ -109,13 +110,11 @@ saveBtn.addEventListener("click", () => {
             };
             otazka.odpovede.push(odpoved);
         }
-        if (spravneOdpovedeCounter > 1) {
-            alert("To nemožeš");
-            return;
-        }
         otazky.push(otazka);
     }
     test.otazky = otazky;
     console.log(test);
+    addTest(test).then(() => {
+        alert("Test was added to database.");
+    });
 });
-export {};
