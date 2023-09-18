@@ -1,5 +1,6 @@
-import { getTestById } from "./dbService.js";
+import { deleteTest, getTestById } from "./dbService.js";
 import { getQuizIdFromURL } from "./helpers.js";
+const deleteTestBtn = document.querySelector("button.deleteTest");
 const testId = getQuizIdFromURL();
 if (testId != null) {
     getTestById(testId).then((test) => {
@@ -34,5 +35,15 @@ if (testId != null) {
                 questionsContainer.appendChild(questionDiv);
             }
         }
+        else {
+            window.location.href = "/admin/pages/allTests.html";
+        }
     });
 }
+deleteTestBtn.addEventListener("click", () => {
+    if (testId != null && confirm("Naozaj chcete odstrániť tento test?")) {
+        deleteTest(testId).then(() => {
+            alert("Test bol úspešne zmazaný");
+        });
+    }
+});

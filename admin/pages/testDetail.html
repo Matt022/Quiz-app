@@ -4,16 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/styles/testDetail.css">
     <title>Test detail</title>
 </head>
 
 <body>
-    <a href="/admin/pages/allTests.html">Back to all tests</a>
     <div class="test">
+        <div class="buttons">
+            <a href="/admin/pages/allTests.html">
+                <i class="fa-solid fa-arrow-left"></i> Back to all tests
+            </a>
+            <button class="deleteTest">
+                <i class="fa-solid fa-trash fa-3x"></i>
+            </button>
+        </div>
+        <br><br>
         <h1>Názov testu: <span id="testName"></span></h1>
         <div id="questions"></div>
     </div>
+
     <script type="module" src="/dist/typescript_scripts/testDetail.js"></script>
 </body>
 

@@ -1,7 +1,9 @@
 import { Odpoved } from "../typescript_models/odpoved";
 import { Test } from "../typescript_models/test";
-import { getTestById } from "./dbService.js";
+import { deleteTest, getTestById } from "./dbService.js";
 import { getQuizIdFromURL } from "./helpers.js";
+
+const deleteTestBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button.deleteTest");
 
 const testId: number | null = getQuizIdFromURL();
 if (testId != null) {
@@ -44,6 +46,16 @@ if (testId != null) {
                 questionDiv.appendChild(answersDiv);
                 questionsContainer.appendChild(questionDiv);
             }
+        } else {
+            window.location.href = "/admin/pages/allTests.html";
         }
     });
-}
+} 
+
+deleteTestBtn.addEventListener("click", () => {
+    if (testId != null && confirm("Naozaj chcete odstrániť tento test?")) {
+        deleteTest(testId).then(() => {
+            alert("Test bol úspešne zmazaný");
+        });
+    }
+});
