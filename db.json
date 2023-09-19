@@ -185,6 +185,33 @@
           ]
         }
       ]
+    },
+    {
+      "id": 3,
+      "nazov": "Testovy test",
+      "otazky": [
+        {
+          "text": "Otázka 1",
+          "odpovede": [
+            {
+              "text": "Odpoved 1",
+              "jeSpravna": false
+            },
+            {
+              "text": "Odpoved 2",
+              "jeSpravna": true
+            },
+            {
+              "text": "Odpoved 3",
+              "jeSpravna": false
+            },
+            {
+              "text": "Odpoved 4",
+              "jeSpravna": false
+            }
+          ]
+        }
+      ]
     }
   ]
 }
