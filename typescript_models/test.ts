@@ -1,7 +1,7 @@
-import { Otazka } from "./otazka";
+import { Question } from "./question";
 
 export interface Test {
     id: number;
-    nazov: string;
-    otazky: Otazka[];
+    title: string;
+    questions: Question[];
 }

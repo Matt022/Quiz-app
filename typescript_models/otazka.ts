@@ -1,6 +1,6 @@
-import { Odpoved } from "./odpoved";
+import { Answer } from "./answer";
 
-export interface Otazka {
+export interface Question {
     text: string;
-    odpovede: Odpoved[]; 
+    answers: Answer[];
 }

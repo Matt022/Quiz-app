@@ -1,5 +1,5 @@
-import { Odpoved } from '../typescript_models/odpoved';
-import { Otazka } from "../typescript_models/otazka";
+import { Answer } from '../typescript_models/answer';
+import { Question } from "../typescript_models/question";
 import { Test } from "../typescript_models/test";
 
 // Funkcia pre získanie ID z URL
@@ -17,39 +17,39 @@ export function getQuizIdFromURL(): number | null {
     return null;
 }
 
-export function getData(): Otazka[] {
+export function getData(): Question[] {
     // Získáme seznam všech otázek
-    const otazkyDivs: NodeListOf<HTMLDivElement> = document.querySelectorAll(".otazka");
+    const otazkyDivs: NodeListOf<HTMLDivElement> = document.querySelectorAll(".question");
 
     // Vytvorme pole pre otázky
-    const otazky: Otazka[] = [];
+    const questions: Question[] = [];
 
     // pre každú otázku ako DIV vyrobíme skript na vytiahnutie odpovedí označených či už správne alebo nesprávne
     for (let i: number = 0; i < otazkyDivs.length; i++) {
-        const otazka: Otazka = {
+        const question: Question = {
             text: "",
-            odpovede: [],
+            answers: [],
         };
 
         // získame znenie otázky a priradíme do vytvoreného objektu
         const otazkaInput: HTMLInputElement = <HTMLInputElement>otazkyDivs[i].querySelector("input[type='text']");
-        otazka.text = otazkaInput.value;
+        question.text = otazkaInput.value;
 
-        // všetky odpovede a k nim správne odpovede
-        // správne odpovede zistíme vo for cykle nižšie
-        const odpovedeInputs: NodeListOf<HTMLInputElement> = otazkyDivs[i].querySelectorAll(".odpoved input[type='text']");
-        const spravneInputs: NodeListOf<HTMLInputElement> = otazkyDivs[i].querySelectorAll(".odpoved input[type='checkbox']");
+        // všetky answers a k nim správne answers
+        // správne answers zistíme vo for cykle nižšie
+        const odpovedeInputs: NodeListOf<HTMLInputElement> = otazkyDivs[i].querySelectorAll(".answer input[type='text']");
+        const spravneInputs: NodeListOf<HTMLInputElement> = otazkyDivs[i].querySelectorAll(".answer input[type='checkbox']");
 
         for (let j: number = 0; j < odpovedeInputs.length; j++) {
-            const odpoved: Odpoved = {
+            const answer: Answer = {
                 text: odpovedeInputs[j].value,
-                jeSpravna: spravneInputs[j].checked,
+                isCorrect: spravneInputs[j].checked,
             };
-            otazka.odpovede.push(odpoved);
+            question.answers.push(answer);
         }
 
-        otazky.push(otazka);
+        questions.push(question);
     }
 
-    return otazky;
+    return questions;
 }

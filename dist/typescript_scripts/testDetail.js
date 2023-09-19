@@ -9,23 +9,23 @@ const testId = getQuizIdFromURL();
 if (testId != null) {
     getTestById(testId).then((test) => {
         if (test) {
-            const testNameElement = document.getElementById("nazov");
-            testNameElement.textContent = test.nazov;
+            const testNameElement = document.getElementById("title");
+            testNameElement.textContent = test.title;
             const questionsContainer = document.getElementById("questions");
-            for (let i = 0; i < test.otazky.length; i++) {
+            for (let i = 0; i < test.questions.length; i++) {
                 const questionDiv = document.createElement("div");
                 questionDiv.classList.add("question");
                 const questionText = document.createElement("p");
                 questionText.classList.add("question-text");
-                questionText.textContent = `Question ${i + 1}: ${test.otazky[i].text}`;
+                questionText.textContent = `Question ${i + 1}: ${test.questions[i].text}`;
                 const answersDiv = document.createElement("div");
                 answersDiv.classList.add("answers");
-                test.otazky[i].odpovede.forEach((odpoved) => {
+                test.questions[i].answers.forEach((answer) => {
                     const answerDiv = document.createElement("div");
                     answerDiv.classList.add("answer");
                     const answerText = document.createElement("p");
-                    answerText.textContent = odpoved.text;
-                    if (odpoved.jeSpravna) {
+                    answerText.textContent = answer.text;
+                    if (answer.isCorrect) {
                         answerText.classList.add("correct-answer");
                     }
                     else {
@@ -52,7 +52,7 @@ deleteTestBtn.addEventListener("click", () => {
     }
 });
 editTestBtn.addEventListener("click", () => {
-    const testNameElement = document.getElementById("nazov");
+    const testNameElement = document.getElementById("title");
     testNameElement.contentEditable = "true";
     const questionsDivEl = document.getElementById("questions");
     questionsDivEl.style.display = "none";
@@ -64,27 +64,27 @@ editTestBtn.addEventListener("click", () => {
     saveBtn.style.display = "inline-block";
     getTestById(testId).then((test) => {
         if (test) {
-            for (let i = 0; i < test.otazky.length; i++) {
-                renderQuestionElements(test.otazky[i], i);
+            for (let i = 0; i < test.questions.length; i++) {
+                renderQuestionElements(test.questions[i], i);
             }
             addQuestionButton.addEventListener("click", () => {
-                const otazka = {
+                const question = {
                     text: "",
-                    odpovede: [
-                        { text: "", jeSpravna: false },
-                        { text: "", jeSpravna: false },
-                        { text: "", jeSpravna: false },
-                        { text: "", jeSpravna: false }
+                    answers: [
+                        { text: "", isCorrect: false },
+                        { text: "", isCorrect: false },
+                        { text: "", isCorrect: false },
+                        { text: "", isCorrect: false }
                     ],
                 };
-                test.otazky.push(otazka);
-                renderQuestionElements(otazka, test.otazky.length - 1);
+                test.questions.push(question);
+                renderQuestionElements(question, test.questions.length - 1);
             });
             saveBtn.addEventListener("click", () => {
                 // Získáme hodnotu názvu testu zo spanu
-                const nazovInput = document.getElementById("nazov");
-                test.nazov = nazovInput.textContent;
-                test.otazky = getData();
+                const nazovInput = document.getElementById("title");
+                test.title = nazovInput.textContent;
+                test.questions = getData();
                 updateTest(test.id, test).then(() => {
                     alert("Test was added to database.");
                 });
@@ -93,7 +93,7 @@ editTestBtn.addEventListener("click", () => {
     });
 });
 disableChangesBtn.addEventListener("click", () => {
-    const testNameElement = document.getElementById("nazov");
+    const testNameElement = document.getElementById("title");
     testNameElement.contentEditable = "false";
     const questionsDivEl = document.getElementById("questions");
     questionsDivEl.style.display = "block";
@@ -107,9 +107,9 @@ disableChangesBtn.addEventListener("click", () => {
     }
     testUpdateQuestionsContainer.style.display = "none";
 });
-function renderQuestionElements(otazka, index) {
+function renderQuestionElements(question, index) {
     const otazkaDiv = document.createElement("div");
-    otazkaDiv.className = "otazka";
+    otazkaDiv.className = "question";
     const otazkaLabel = document.createElement("label");
     otazkaLabel.textContent = `Question ${index + 1}:`;
     const buttonToDelete = document.createElement("button");
@@ -122,42 +122,42 @@ function renderQuestionElements(otazka, index) {
     });
     const otazkaInput = document.createElement("input");
     otazkaInput.type = "text";
-    otazkaInput.value = otazka.text;
+    otazkaInput.value = question.text;
     otazkaInput.placeholder = "Znenie otázky";
     otazkaInput.addEventListener("input", (e) => {
-        otazka.text = e.target.value;
+        question.text = e.target.value;
     });
     const odpovedeDiv = document.createElement("div");
-    // každá otázka má presne 4 odpovede
+    // každá otázka má presne 4 answers
     for (let i = 0; i < 4; i++) {
-        const odpoved = otazka.odpovede[i];
+        const answer = question.answers[i];
         const odpovedDiv = document.createElement("div");
-        odpovedDiv.className = "odpoved";
+        odpovedDiv.className = "answer";
         const odpovedInput = document.createElement("input");
         odpovedInput.type = "text";
         odpovedInput.placeholder = "Odpoved";
-        odpovedInput.value = odpoved ? odpoved.text : "";
-        // Vytvorme nový objekt odpovede v každej iterácii
+        odpovedInput.value = answer ? answer.text : "";
+        // Vytvorme nový objekt answers v každej iterácii
         const novaOdpoved = {
             text: "",
-            jeSpravna: false,
+            isCorrect: false,
         };
         const spravnaOdpovedInput = document.createElement("input");
         spravnaOdpovedInput.type = "checkbox";
-        spravnaOdpovedInput.checked = odpoved ? odpoved.jeSpravna : false;
+        spravnaOdpovedInput.checked = answer ? answer.isCorrect : false;
         spravnaOdpovedInput.addEventListener("change", (e) => {
-            novaOdpoved.jeSpravna = e.target.checked;
+            novaOdpoved.isCorrect = e.target.checked;
         });
         const spravnaOdpovedLabel = document.createElement("label");
         spravnaOdpovedLabel.textContent = "Correct answer";
         odpovedDiv.appendChild(odpovedInput);
-        const spravnaOdpovedDiv = document.createElement("div");
-        spravnaOdpovedDiv.classList.add("spravnaOdpovedDiv");
-        spravnaOdpovedDiv.appendChild(spravnaOdpovedLabel);
-        spravnaOdpovedDiv.appendChild(spravnaOdpovedInput);
-        odpovedDiv.appendChild(spravnaOdpovedDiv);
+        const correctAnswerDiv = document.createElement("div");
+        correctAnswerDiv.classList.add("correctAnswerDiv");
+        correctAnswerDiv.appendChild(spravnaOdpovedLabel);
+        correctAnswerDiv.appendChild(spravnaOdpovedInput);
+        odpovedDiv.appendChild(correctAnswerDiv);
         odpovedeDiv.appendChild(odpovedDiv);
-        otazka.odpovede[i] = novaOdpoved;
+        question.answers[i] = novaOdpoved;
     }
     const brElement = document.createElement("br");
     const hr = document.createElement("hr");

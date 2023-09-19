@@ -12,30 +12,30 @@ export function getQuizIdFromURL() {
 }
 export function getData() {
     // Získáme seznam všech otázek
-    const otazkyDivs = document.querySelectorAll(".otazka");
+    const otazkyDivs = document.querySelectorAll(".question");
     // Vytvorme pole pre otázky
-    const otazky = [];
+    const questions = [];
     // pre každú otázku ako DIV vyrobíme skript na vytiahnutie odpovedí označených či už správne alebo nesprávne
     for (let i = 0; i < otazkyDivs.length; i++) {
-        const otazka = {
+        const question = {
             text: "",
-            odpovede: [],
+            answers: [],
         };
         // získame znenie otázky a priradíme do vytvoreného objektu
         const otazkaInput = otazkyDivs[i].querySelector("input[type='text']");
-        otazka.text = otazkaInput.value;
-        // všetky odpovede a k nim správne odpovede
-        // správne odpovede zistíme vo for cykle nižšie
-        const odpovedeInputs = otazkyDivs[i].querySelectorAll(".odpoved input[type='text']");
-        const spravneInputs = otazkyDivs[i].querySelectorAll(".odpoved input[type='checkbox']");
+        question.text = otazkaInput.value;
+        // všetky answers a k nim správne answers
+        // správne answers zistíme vo for cykle nižšie
+        const odpovedeInputs = otazkyDivs[i].querySelectorAll(".answer input[type='text']");
+        const spravneInputs = otazkyDivs[i].querySelectorAll(".answer input[type='checkbox']");
         for (let j = 0; j < odpovedeInputs.length; j++) {
-            const odpoved = {
+            const answer = {
                 text: odpovedeInputs[j].value,
-                jeSpravna: spravneInputs[j].checked,
+                isCorrect: spravneInputs[j].checked,
             };
-            otazka.odpovede.push(odpoved);
+            question.answers.push(answer);
         }
-        otazky.push(otazka);
+        questions.push(question);
     }
-    return otazky;
+    return questions;
 }

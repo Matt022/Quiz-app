@@ -6,11 +6,11 @@ getAllTests().then((tests) => {
         divTestHolder.classList.add("testHolder");
         const headingTestName = document.createElement("h2");
         headingTestName.classList.add("testName");
-        headingTestName.textContent = test.nazov;
+        headingTestName.textContent = test.title;
         divTestHolder.appendChild(headingTestName);
         const paragraphQuestionCount = document.createElement("p");
         paragraphQuestionCount.classList.add("question-counter");
-        paragraphQuestionCount.innerHTML = `Number of questions in the test: <strong>${test.otazky.length.toString()}</strong>`;
+        paragraphQuestionCount.innerHTML = `Number of questions in the test: <strong>${test.questions.length.toString()}</strong>`;
         divTestHolder.appendChild(paragraphQuestionCount);
         const anchorViewDetail = document.createElement("a");
         anchorViewDetail.textContent = "Apply to test";

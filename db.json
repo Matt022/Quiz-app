@@ -1,643 +1,643 @@
 {
-  "tests": [
-    {
-      "id": 1,
-      "nazov": "IT základy",
-      "otazky": [
+    "tests": [
         {
-          "text": "Čo znamená skratka IT?",
-          "odpovede": [
-            {
-              "text": "Informačná Technológia",
-              "jeSpravna": true
-            },
-            {
-              "text": "Inteligentné Telefony",
-              "jeSpravna": false
-            },
-            {
-              "text": "Inovačná Technológia",
-              "jeSpravna": false
-            },
-            {
-              "text": "Internetový Trend",
-              "jeSpravna": false
-            }
-          ]
+            "id": 1,
+            "title": "IT základy",
+            "questions": [
+                {
+                    "text": "Čo znamená skratka IT?",
+                    "answers": [
+                        {
+                            "text": "Informačná Technológia",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Inteligentné Telefony",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Inovačná Technológia",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Internetový Trend",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je operačný systém?",
+                    "answers": [
+                        {
+                            "text": "Softvér, ktorý riadi hardvér počítača",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Typ počítačového disku",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Bezdrôtová sieť",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Inštalačný disk",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je RAM?",
+                    "answers": [
+                        {
+                            "text": "Pamäť s krátkodobým uchovaním dát",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Typ procesora",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Grafická karta",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Operačný systém",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Aký je účel firewallov v počítačovej sieti?",
+                    "answers": [
+                        {
+                            "text": "Ochrana siete pred neoprávneným prístupom",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Rýchlejšia internetová pripojenosť",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Ochrana pred vírusmi v počítači",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Zrýchlenie systému",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo predstavuje skratka URL?",
+                    "answers": [
+                        {
+                            "text": "Uniform Resource Locator",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Universal Remote Language",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "User Registration List",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Unified Resource Language",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Ktorý z nasledujúcich typov súborov je komprimovaný?",
+                    "answers": [
+                        {
+                            "text": "ZIP",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "TXT",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "JPEG",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "PDF",
+                            "isCorrect": false
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "text": "Čo je operačný systém?",
-          "odpovede": [
-            {
-              "text": "Softvér, ktorý riadi hardvér počítača",
-              "jeSpravna": true
-            },
-            {
-              "text": "Typ počítačového disku",
-              "jeSpravna": false
-            },
-            {
-              "text": "Bezdrôtová sieť",
-              "jeSpravna": false
-            },
-            {
-              "text": "Inštalačný disk",
-              "jeSpravna": false
-            }
-          ]
+            "id": 2,
+            "title": "Test o Webových Technológiách",
+            "questions": [
+                {
+                    "text": "Čo je HTML?",
+                    "answers": [
+                        {
+                            "text": "Markupový jazyk na tvorbu webových stránok",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Programovací jazyk na tvorbu mobilných aplikácií",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Operačný systém",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ kompresného formátu",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Ktorý jazyk sa používa na štýlovanie webových stránok?",
+                    "answers": [
+                        {
+                            "text": "CSS",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "JavaScript",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "HTML",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "PHP",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Aká je hlavná funkcia JavaScriptu na webových stránkach?",
+                    "answers": [
+                        {
+                            "text": "Interaktívnosť a dynamická funkcionalita",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Formátovanie textu",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Zabezpečenie webových stránok",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Skladovanie dát",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je to HTTP?",
+                    "answers": [
+                        {
+                            "text": "Hypertext Transfer Protocol",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "High-Tech Programming Hub",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Hyperlink Text Program",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Hard To Translate Protocol",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Ktorá z nasledujúcich technológií je najčastejšie používaná na tvorbu dynamických webových stránok?",
+                    "answers": [
+                        {
+                            "text": "Ajax",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "SQL",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "FTP",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "XML",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je to cookies (súbory cookies) na webových stránkach?",
+                    "answers": [
+                        {
+                            "text": "Malé textové súbory uložené v prehliadači používateľa",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Zoznam najobľúbenejších stránok",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Formulár na prihlásenie sa na webovú stránku",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ súborových príloh na webových stránkach",
+                            "isCorrect": false
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "text": "Čo je RAM?",
-          "odpovede": [
-            {
-              "text": "Pamäť s krátkodobým uchovaním dát",
-              "jeSpravna": true
-            },
-            {
-              "text": "Typ procesora",
-              "jeSpravna": false
-            },
-            {
-              "text": "Grafická karta",
-              "jeSpravna": false
-            },
-            {
-              "text": "Operačný systém",
-              "jeSpravna": false
-            }
-          ]
+            "id": 3,
+            "title": "Test o Programovacích Jazykoch",
+            "questions": [
+                {
+                    "text": "Čo je to syntax programovacieho jazyka?",
+                    "answers": [
+                        {
+                            "text": "Súbor slov a pravidiel, ktoré určujú, ako napísať platný kód.",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Účel programovacieho jazyka.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Základná funkcia operačného systému.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ programovacieho jazyka.",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Ktorý programovací jazyk je často používaný na vývoj mobilných aplikácií pre iOS?",
+                    "answers": [
+                        {
+                            "text": "Java",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "C#",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Swift",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Python",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je to zásobník (stack) v programovaní?",
+                    "answers": [
+                        {
+                            "text": "Štruktúra dát na ukladanie hodnôt vo forme zoznamu.",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Základný algoritmus na triedenie dát.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ programovacieho jazyka.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Príkaz na výpis textu na obrazovku.",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je to cyklus (loop) v programovaní?",
+                    "answers": [
+                        {
+                            "text": "Príkaz na ukončenie programu.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Štruktúra dát na ukladanie viacerých hodnôt.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Proces, ktorý opakuje určité časti kódu.",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Typ premenných v jazyku C.",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Ktorý programovací jazyk je často používaný na spracovanie údajov a vedecké výpočty?",
+                    "answers": [
+                        {
+                            "text": "Python",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "JavaScript",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Ruby",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "C#",
+                            "isCorrect": false
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "text": "Aký je účel firewallov v počítačovej sieti?",
-          "odpovede": [
-            {
-              "text": "Ochrana siete pred neoprávneným prístupom",
-              "jeSpravna": true
-            },
-            {
-              "text": "Rýchlejšia internetová pripojenosť",
-              "jeSpravna": false
-            },
-            {
-              "text": "Ochrana pred vírusmi v počítači",
-              "jeSpravna": false
-            },
-            {
-              "text": "Zrýchlenie systému",
-              "jeSpravna": false
-            }
-          ]
+            "id": 4,
+            "title": "Test o Počítačových Sieťach",
+            "questions": [
+                {
+                    "text": "Čo je to IP adresa?",
+                    "answers": [
+                        {
+                            "text": "Identifikačné číslo pre zariadenia v počítačovej sieti",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Názov webovej stránky",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ internetového prehliadača",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Zoznam emailových kontaktov",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Aká je funkcia DNS (Domain Name System) v sieti?",
+                    "answers": [
+                        {
+                            "text": "Prevod doménových mien na IP adresy",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Ochrana pred vírusmi",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Sledovanie webových aktivít",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ bezdrôtovej technológie",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je to router?",
+                    "answers": [
+                        {
+                            "text": "Zariadenie na smerovanie dát v sieti",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Typ počítačového procesora",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Bezdrôtová klávesnica",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Program na editovanie textu",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Aký je význam portov v počítačových sieťach?",
+                    "answers": [
+                        {
+                            "text": "Identifikácia konkrétnej služby na zariadení",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Typ internetového prehliadača",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Heslo pre prístup do siete",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ bezdrôtovej technológie",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo znamená skratka VPN?",
+                    "answers": [
+                        {
+                            "text": "Virtual Private Network",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Virtuálny Počítačový Nástroj",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Veľká Počítačová Síť",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Video Prehliadací Nástroj",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Aká je výhoda používania WPA2 šifrovania v bezdrôtovej sieti?",
+                    "answers": [
+                        {
+                            "text": "Vyššia bezpečnosť siete",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Rýchlejší internet",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Lepší signál WiFi",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Nahradzuje Ethernet káble",
+                            "isCorrect": false
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "text": "Čo predstavuje skratka URL?",
-          "odpovede": [
-            {
-              "text": "Uniform Resource Locator",
-              "jeSpravna": true
-            },
-            {
-              "text": "Universal Remote Language",
-              "jeSpravna": false
-            },
-            {
-              "text": "User Registration List",
-              "jeSpravna": false
-            },
-            {
-              "text": "Unified Resource Language",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Ktorý z nasledujúcich typov súborov je komprimovaný?",
-          "odpovede": [
-            {
-              "text": "ZIP",
-              "jeSpravna": true
-            },
-            {
-              "text": "TXT",
-              "jeSpravna": false
-            },
-            {
-              "text": "JPEG",
-              "jeSpravna": false
-            },
-            {
-              "text": "PDF",
-              "jeSpravna": false
-            }
-          ]
+            "id": 5,
+            "title": "Test o Bezpečnosti IT",
+            "questions": [
+                {
+                    "text": "Čo je to phishing?",
+                    "answers": [
+                        {
+                            "text": "Útok, pri ktorom sa podvodne získavajú citlivé informácie.",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Športová rybačka",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ počítačového vírusu",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Návnada na vtáky",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Aký je účel antivírusového softvéru?",
+                    "answers": [
+                        {
+                            "text": "Ochrana pred vírusmi a malware.",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Zvýšiť rýchlosť internetového pripojenia.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Vytváranie zálohových kópií dát.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Optimalizovať výkon počítača.",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je to firewall?",
+                    "answers": [
+                        {
+                            "text": "Systém na ochranu siete pred neoprávneným prístupom.",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Typ zápalnej steny v počítači.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Operačný systém.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Mobilná aplikácia na sledovanie počasia.",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo je to bezpečnostný token?",
+                    "answers": [
+                        {
+                            "text": "Zariadenie pre dvojúrovňovú autentifikáciu.",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Heslo pre WiFi sieť.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Typ bezdrôtovej klávesnice.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Systém na šifrovanie emailov.",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Čo znamená skratka VPN?",
+                    "answers": [
+                        {
+                            "text": "Virtual Private Network",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Virtuálny Počítačový Nástroj",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Veľká Počítačová Síť",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Video Prehliadací Nástroj",
+                            "isCorrect": false
+                        }
+                    ]
+                },
+                {
+                    "text": "Aký je účel webového certifikátu (SSL certifikátu)?",
+                    "answers": [
+                        {
+                            "text": "Zabezpečiť šifrovanú komunikáciu medzi webovým serverom a klientom.",
+                            "isCorrect": true
+                        },
+                        {
+                            "text": "Overiť správnosť HTML kódu na webovej stránke.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Ukladať osobné údaje používateľov webovej stránky.",
+                            "isCorrect": false
+                        },
+                        {
+                            "text": "Vytvoriť zálohu webovej stránky.",
+                            "isCorrect": false
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-    {
-      "id": 2,
-      "nazov": "Test o Webových Technológiách",
-      "otazky": [
-        {
-          "text": "Čo je HTML?",
-          "odpovede": [
-            {
-              "text": "Markupový jazyk na tvorbu webových stránok",
-              "jeSpravna": true
-            },
-            {
-              "text": "Programovací jazyk na tvorbu mobilných aplikácií",
-              "jeSpravna": false
-            },
-            {
-              "text": "Operačný systém",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ kompresného formátu",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Ktorý jazyk sa používa na štýlovanie webových stránok?",
-          "odpovede": [
-            {
-              "text": "CSS",
-              "jeSpravna": true
-            },
-            {
-              "text": "JavaScript",
-              "jeSpravna": false
-            },
-            {
-              "text": "HTML",
-              "jeSpravna": false
-            },
-            {
-              "text": "PHP",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Aká je hlavná funkcia JavaScriptu na webových stránkach?",
-          "odpovede": [
-            {
-              "text": "Interaktívnosť a dynamická funkcionalita",
-              "jeSpravna": true
-            },
-            {
-              "text": "Formátovanie textu",
-              "jeSpravna": false
-            },
-            {
-              "text": "Zabezpečenie webových stránok",
-              "jeSpravna": false
-            },
-            {
-              "text": "Skladovanie dát",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo je to HTTP?",
-          "odpovede": [
-            {
-              "text": "Hypertext Transfer Protocol",
-              "jeSpravna": true
-            },
-            {
-              "text": "High-Tech Programming Hub",
-              "jeSpravna": false
-            },
-            {
-              "text": "Hyperlink Text Program",
-              "jeSpravna": false
-            },
-            {
-              "text": "Hard To Translate Protocol",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Ktorá z nasledujúcich technológií je najčastejšie používaná na tvorbu dynamických webových stránok?",
-          "odpovede": [
-            {
-              "text": "Ajax",
-              "jeSpravna": true
-            },
-            {
-              "text": "SQL",
-              "jeSpravna": false
-            },
-            {
-              "text": "FTP",
-              "jeSpravna": false
-            },
-            {
-              "text": "XML",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo je to cookies (súbory cookies) na webových stránkach?",
-          "odpovede": [
-            {
-              "text": "Malé textové súbory uložené v prehliadači používateľa",
-              "jeSpravna": true
-            },
-            {
-              "text": "Zoznam najobľúbenejších stránok",
-              "jeSpravna": false
-            },
-            {
-              "text": "Formulár na prihlásenie sa na webovú stránku",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ súborových príloh na webových stránkach",
-              "jeSpravna": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "nazov": "Test o Programovacích Jazykoch",
-      "otazky": [
-        {
-          "text": "Čo je to syntax programovacieho jazyka?",
-          "odpovede": [
-            {
-              "text": "Súbor slov a pravidiel, ktoré určujú, ako napísať platný kód.",
-              "jeSpravna": true
-            },
-            {
-              "text": "Účel programovacieho jazyka.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Základná funkcia operačného systému.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ programovacieho jazyka.",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Ktorý programovací jazyk je často používaný na vývoj mobilných aplikácií pre iOS?",
-          "odpovede": [
-            {
-              "text": "Java",
-              "jeSpravna": false
-            },
-            {
-              "text": "C#",
-              "jeSpravna": false
-            },
-            {
-              "text": "Swift",
-              "jeSpravna": true
-            },
-            {
-              "text": "Python",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo je to zásobník (stack) v programovaní?",
-          "odpovede": [
-            {
-              "text": "Štruktúra dát na ukladanie hodnôt vo forme zoznamu.",
-              "jeSpravna": true
-            },
-            {
-              "text": "Základný algoritmus na triedenie dát.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ programovacieho jazyka.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Príkaz na výpis textu na obrazovku.",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo je to cyklus (loop) v programovaní?",
-          "odpovede": [
-            {
-              "text": "Príkaz na ukončenie programu.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Štruktúra dát na ukladanie viacerých hodnôt.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Proces, ktorý opakuje určité časti kódu.",
-              "jeSpravna": true
-            },
-            {
-              "text": "Typ premenných v jazyku C.",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Ktorý programovací jazyk je často používaný na spracovanie údajov a vedecké výpočty?",
-          "odpovede": [
-            {
-              "text": "Python",
-              "jeSpravna": true
-            },
-            {
-              "text": "JavaScript",
-              "jeSpravna": false
-            },
-            {
-              "text": "Ruby",
-              "jeSpravna": false
-            },
-            {
-              "text": "C#",
-              "jeSpravna": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "nazov": "Test o Počítačových Sieťach",
-      "otazky": [
-        {
-          "text": "Čo je to IP adresa?",
-          "odpovede": [
-            {
-              "text": "Identifikačné číslo pre zariadenia v počítačovej sieti",
-              "jeSpravna": true
-            },
-            {
-              "text": "Názov webovej stránky",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ internetového prehliadača",
-              "jeSpravna": false
-            },
-            {
-              "text": "Zoznam emailových kontaktov",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Aká je funkcia DNS (Domain Name System) v sieti?",
-          "odpovede": [
-            {
-              "text": "Prevod doménových mien na IP adresy",
-              "jeSpravna": true
-            },
-            {
-              "text": "Ochrana pred vírusmi",
-              "jeSpravna": false
-            },
-            {
-              "text": "Sledovanie webových aktivít",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ bezdrôtovej technológie",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo je to router?",
-          "odpovede": [
-            {
-              "text": "Zariadenie na smerovanie dát v sieti",
-              "jeSpravna": true
-            },
-            {
-              "text": "Typ počítačového procesora",
-              "jeSpravna": false
-            },
-            {
-              "text": "Bezdrôtová klávesnica",
-              "jeSpravna": false
-            },
-            {
-              "text": "Program na editovanie textu",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Aký je význam portov v počítačových sieťach?",
-          "odpovede": [
-            {
-              "text": "Identifikácia konkrétnej služby na zariadení",
-              "jeSpravna": true
-            },
-            {
-              "text": "Typ internetového prehliadača",
-              "jeSpravna": false
-            },
-            {
-              "text": "Heslo pre prístup do siete",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ bezdrôtovej technológie",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo znamená skratka VPN?",
-          "odpovede": [
-            {
-              "text": "Virtual Private Network",
-              "jeSpravna": true
-            },
-            {
-              "text": "Virtuálny Počítačový Nástroj",
-              "jeSpravna": false
-            },
-            {
-              "text": "Veľká Počítačová Síť",
-              "jeSpravna": false
-            },
-            {
-              "text": "Video Prehliadací Nástroj",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Aká je výhoda používania WPA2 šifrovania v bezdrôtovej sieti?",
-          "odpovede": [
-            {
-              "text": "Vyššia bezpečnosť siete",
-              "jeSpravna": true
-            },
-            {
-              "text": "Rýchlejší internet",
-              "jeSpravna": false
-            },
-            {
-              "text": "Lepší signál WiFi",
-              "jeSpravna": false
-            },
-            {
-              "text": "Nahradzuje Ethernet káble",
-              "jeSpravna": false
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "nazov": "Test o Bezpečnosti IT",
-      "otazky": [
-        {
-          "text": "Čo je to phishing?",
-          "odpovede": [
-            {
-              "text": "Útok, pri ktorom sa podvodne získavajú citlivé informácie.",
-              "jeSpravna": true
-            },
-            {
-              "text": "Športová rybačka",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ počítačového vírusu",
-              "jeSpravna": false
-            },
-            {
-              "text": "Návnada na vtáky",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Aký je účel antivírusového softvéru?",
-          "odpovede": [
-            {
-              "text": "Ochrana pred vírusmi a malware.",
-              "jeSpravna": true
-            },
-            {
-              "text": "Zvýšiť rýchlosť internetového pripojenia.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Vytváranie zálohových kópií dát.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Optimalizovať výkon počítača.",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo je to firewall?",
-          "odpovede": [
-            {
-              "text": "Systém na ochranu siete pred neoprávneným prístupom.",
-              "jeSpravna": true
-            },
-            {
-              "text": "Typ zápalnej steny v počítači.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Operačný systém.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Mobilná aplikácia na sledovanie počasia.",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo je to bezpečnostný token?",
-          "odpovede": [
-            {
-              "text": "Zariadenie pre dvojúrovňovú autentifikáciu.",
-              "jeSpravna": true
-            },
-            {
-              "text": "Heslo pre WiFi sieť.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Typ bezdrôtovej klávesnice.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Systém na šifrovanie emailov.",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Čo znamená skratka VPN?",
-          "odpovede": [
-            {
-              "text": "Virtual Private Network",
-              "jeSpravna": true
-            },
-            {
-              "text": "Virtuálny Počítačový Nástroj",
-              "jeSpravna": false
-            },
-            {
-              "text": "Veľká Počítačová Síť",
-              "jeSpravna": false
-            },
-            {
-              "text": "Video Prehliadací Nástroj",
-              "jeSpravna": false
-            }
-          ]
-        },
-        {
-          "text": "Aký je účel webového certifikátu (SSL certifikátu)?",
-          "odpovede": [
-            {
-              "text": "Zabezpečiť šifrovanú komunikáciu medzi webovým serverom a klientom.",
-              "jeSpravna": true
-            },
-            {
-              "text": "Overiť správnosť HTML kódu na webovej stránke.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Ukladať osobné údaje používateľov webovej stránky.",
-              "jeSpravna": false
-            },
-            {
-              "text": "Vytvoriť zálohu webovej stránky.",
-              "jeSpravna": false
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }

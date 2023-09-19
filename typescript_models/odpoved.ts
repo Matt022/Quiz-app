@@ -1,4 +1,4 @@
-export interface Odpoved {
+export interface Answer {
     text: string;
-    jeSpravna: boolean;
+    isCorrect: boolean;
 }

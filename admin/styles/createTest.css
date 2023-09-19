@@ -48,7 +48,7 @@ main section.main-container div#test-form {
     margin: 0 auto;
 }
 
-main section.main-container div#test-form > label {
+main section.main-container div#test-form>label {
     font-weight: bold;
 }
 
@@ -77,13 +77,13 @@ main section.main-container div#test-form div.buttons button#save {
     cursor: pointer;
 }
 
-main section.main-container div#test-form div#otazky-container {
+main section.main-container div#test-form div#questions-container {
     padding: 10px;
     height: 520px;
     overflow-y: auto;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka {
+main section.main-container div#test-form div#questions-container div.question {
     padding: 15px 20px;
     width: 700px;
     border-radius: 7px;
@@ -94,27 +94,27 @@ main section.main-container div#test-form div#otazky-container div.otazka {
     margin-bottom: 30px;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka > label {
+main section.main-container div#test-form div#questions-container div.question>label {
     margin-left: 20px;
     font-weight: bold;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka > input {
+main section.main-container div#test-form div#questions-container div.question>input {
     width: 300px;
     margin-bottom: 30px;
     margin-left: 20px;
     margin-top: 10px;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka > div {
+main section.main-container div#test-form div#questions-container div.question>div {
     margin-bottom: 20px;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka:first-child button {
+main section.main-container div#test-form div#questions-container div.question:first-child button {
     display: none;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka button {
+main section.main-container div#test-form div#questions-container div.question button {
     font-size: 17px;
     background-color: rgb(255, 0, 0);
     color: white;
@@ -127,11 +127,11 @@ main section.main-container div#test-form div#otazky-container div.otazka button
     transition: all 0.2s ease-in-out;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka button:hover {
+main section.main-container div#test-form div#questions-container div.question button:hover {
     background-color: rgb(204, 4, 4);
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka div div.odpoved {
+main section.main-container div#test-form div#questions-container div.question div div.answer {
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -139,11 +139,11 @@ main section.main-container div#test-form div#otazky-container div.otazka div di
     width: 90%;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka div div.odpoved > input {
+main section.main-container div#test-form div#questions-container div.question div div.answer>input {
     width: 300px;
 }
 
-main section.main-container div#test-form div#otazky-container div.otazka div div.odpoved div.spravnaOdpovedDiv {
+main section.main-container div#test-form div#questions-container div.question div div.answer div.correctAnswerDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
