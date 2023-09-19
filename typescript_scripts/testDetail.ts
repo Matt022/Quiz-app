@@ -83,7 +83,7 @@ editTestBtn.addEventListener("click", () => {
     getTestById(testId!).then((test: Test | null) => {
         if (test){
             for (let i: number = 0; i < test.otazky.length; i++) {
-                renderOtazka(test.otazky[i], i);
+                renderQuestionElements(test.otazky[i], i);
             }
 
             addQuestionButton.addEventListener("click", () => {
@@ -98,11 +98,11 @@ editTestBtn.addEventListener("click", () => {
                 };
 
                 test.otazky.push(otazka);
-                renderOtazka(otazka, test.otazky.length - 1);
+                renderQuestionElements(otazka, test.otazky.length - 1);
             });
 
             saveBtn.addEventListener("click", () => {
-                // Získáme hodnotu názvu testu z inputu
+                // Získáme hodnotu názvu testu zo spanu
                 const nazovInput: HTMLSpanElement = <HTMLSpanElement>document.getElementById("nazov");
                 test.nazov = nazovInput.textContent!;
                 test.otazky = getData();
@@ -134,7 +134,7 @@ disableChangesBtn.addEventListener("click", () => {
     testUpdateQuestionsContainer.style.display = "none";
 });
 
-function renderOtazka(otazka: Otazka, index: number): void {
+function renderQuestionElements(otazka: Otazka, index: number): void {
     const otazkaDiv: HTMLDivElement = document.createElement("div");
     otazkaDiv.className = "otazka";
 
@@ -161,7 +161,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
 
     const odpovedeDiv: HTMLDivElement = document.createElement("div");
 
-    // každá otázka má 4 odpovede
+    // každá otázka má presne 4 odpovede
     for (let i: number = 0; i < 4; i++) {
         const odpoved: Odpoved = otazka.odpovede[i];
         const odpovedDiv = document.createElement("div");
@@ -182,9 +182,6 @@ function renderOtazka(otazka: Otazka, index: number): void {
         spravnaOdpovedInput.type = "checkbox";
         spravnaOdpovedInput.checked = odpoved ? odpoved.jeSpravna : false;
 
-        // Vytvorme dočasnú premennú pre aktuálnu hodnotu i
-        const currentI: number = i;
-
         spravnaOdpovedInput.addEventListener("change", (e: Event) => {
             novaOdpoved.jeSpravna = (e.target as HTMLInputElement).checked;
         });
@@ -201,7 +198,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
         odpovedDiv.appendChild(spravnaOdpovedDiv);
 
         odpovedeDiv.appendChild(odpovedDiv);
-        otazka.odpovede[currentI] = novaOdpoved;
+        otazka.odpovede[i] = novaOdpoved;
     }
 
     const brElement: HTMLBRElement = document.createElement("br");
@@ -213,7 +210,6 @@ function renderOtazka(otazka: Otazka, index: number): void {
     otazkaDiv.appendChild(hr);
     otazkaDiv.appendChild(odpovedeDiv);
     otazkaDiv.appendChild(buttonToDelete);
-
 
     const testUpdateQuestionsContainer: HTMLDivElement = <HTMLDivElement>document.querySelector("div.test-update-questions");
     testUpdateQuestionsContainer.appendChild(otazkaDiv);

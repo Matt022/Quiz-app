@@ -1,4 +1,4 @@
-import { Odpoved } from "../typescript_models/odpoved";
+import { Odpoved } from '../typescript_models/odpoved';
 import { Otazka } from "../typescript_models/otazka";
 import { Test } from "../typescript_models/test";
 
@@ -18,8 +18,6 @@ export function getQuizIdFromURL(): number | null {
 }
 
 export function getData(): Otazka[] {
-    
-
     // Získáme seznam všech otázek
     const otazkyDivs: NodeListOf<HTMLDivElement> = document.querySelectorAll(".otazka");
 

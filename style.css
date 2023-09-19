@@ -23,9 +23,9 @@ header section.header-container a {
     border-radius: 7px;
 }
 
-
 main {
     padding: 10px;
+    height: 84vh;
 }
 
 main section.main-container {
