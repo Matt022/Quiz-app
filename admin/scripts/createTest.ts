@@ -2,6 +2,7 @@ import { Odpoved } from "../../typescript_models/odpoved";
 import { Otazka } from "../../typescript_models/otazka";
 import { Test } from '../../typescript_models/test';
 import { addTest } from "../../typescript_scripts/dbService.js";
+import { getData } from "../../typescript_scripts/helpers.js";
 
 const test: Test = {
     id: 0,
@@ -50,6 +51,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
 
     const odpovedeDiv: HTMLDivElement = document.createElement("div");
 
+    // každá otázka má 4 odpovede
     for (let i: number = 0; i < 4; i++) {
         const odpoved: Odpoved = otazka.odpovede[i];
         const odpovedDiv = document.createElement("div");
@@ -108,48 +110,9 @@ saveBtn.addEventListener("click", () => {
     // Získáme hodnotu názvu testu z inputu
     const nazovInput: HTMLInputElement = <HTMLInputElement>document.getElementById("nazov");
     test.nazov = nazovInput.value;
+    
+    test.otazky = getData();
 
-    // Získáme seznam všech otázek
-    const otazkyDivs: NodeListOf<HTMLDivElement> = document.querySelectorAll(".otazka");
-
-    // Vytvorme pole pre otázky
-    const otazky: Otazka[] = [];
-
-    // pre každú otázku ako DIV vyrobíme skript na vytiahnutie odpovedí označených či už správne alebo nesprávne
-    for (let i: number = 0; i < otazkyDivs.length; i++) {
-        const otazka: Otazka = {
-            text: "",
-            odpovede: [],
-        };
-
-        // získame znenie otázky a priradíme do vytvoreného objektu
-        const otazkaInput: HTMLInputElement = <HTMLInputElement>otazkyDivs[i].querySelector("input[type='text']");
-        otazka.text = otazkaInput.value;
-
-        // všetky odpovede a k nim správne odpovede
-        // správne odpovede zistíme vo for cykle nižšie
-        const odpovedeInputs: NodeListOf<HTMLInputElement> = otazkyDivs[i].querySelectorAll(".odpoved input[type='text']");
-        const spravneInputs: NodeListOf<HTMLInputElement> = otazkyDivs[i].querySelectorAll(".odpoved input[type='checkbox']");
-
-        let spravneOdpovedeCounter: number = 0;
-        
-        for (let j: number = 0; j < odpovedeInputs.length; j++) {
-            if (spravneInputs[j].checked) {
-                spravneOdpovedeCounter++;
-            }
-            const odpoved: Odpoved = {
-                text: odpovedeInputs[j].value,
-                jeSpravna: spravneInputs[j].checked,
-            };
-            otazka.odpovede.push(odpoved);
-        }
-
-        otazky.push(otazka);
-    }
-
-    test.otazky = otazky;
-
-    console.log(test);
     addTest(test).then(() => {
         alert("Test was added to database.");
     });

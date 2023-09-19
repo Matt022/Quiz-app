@@ -3,7 +3,7 @@ body {
 }
 
 .test {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f0f0f0;
@@ -15,7 +15,6 @@ body {
     display: flex;
     align-items: center;
     align-content: center;
-    /* border: 1px solid black; */
     min-width: 300px;
 }
 
@@ -81,8 +80,41 @@ body {
     color: white;
 }
 
+.test div.buttons button#add-question {
+    color: black;
+    display: none;
+    font-size: 18px;
+    text-shadow: none;
+    border: 1px solid #000;
+    background-color: white;
+}
+
+.test div.buttons button#add-question:hover {
+    background-color: black;
+    color: white;
+}
+
+.test div.buttons button#save {
+    color: black;
+    display: none;
+    font-size: 18px;
+    text-shadow: none;
+    border: 1px solid #000;
+    background-color: white;
+}
+
+.test div.buttons button#save:hover {
+    background-color: black;
+    color: white;
+}
+
+/*---------------------------*/
 .test h1 {
     font-size: 24px;
+}
+
+.test h1 span {
+    padding: 10px;
 }
 
 .test div#questions .question {
@@ -110,4 +142,62 @@ body {
 
 .incorrect-answer {
     font-weight: bold;
+}
+
+/*-----------*/
+#otazky-container {
+    padding: 10px;
+}
+
+.otazka {
+    padding: 10px;
+    width: 700px;
+    border: 1px solid black;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.otazka>label {
+    margin-left: 20px;
+}
+
+.otazka>input {
+    width: 300px;
+    margin-bottom: 30px;
+    margin-left: 20px;
+    padding: 10px;
+}
+
+.otazka>div {
+    margin-bottom: 20px;
+}
+
+.odpoved {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.odpoved > input {
+    width: 300px;
+    padding: 10px 20px;
+}
+
+.spravnaOdpovedDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    width: 170px;
+}
+
+div.test-update-questions {
+    background-color: #fff;
+    height: 640px;
+    overflow-y: auto;
+    display: none;
+    padding: 30px;
 }

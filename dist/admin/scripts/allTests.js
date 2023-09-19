@@ -15,7 +15,6 @@ getAllTests().then((tests) => {
         const anchorViewDetail = document.createElement("a");
         anchorViewDetail.textContent = "View test detail";
         anchorViewDetail.href = `/admin/pages/testDetail.html?id=${test.id}`;
-        // anchorViewDetail.href = `/pages/testApplying.html?id=${test.id}`;
         divTestHolder.appendChild(anchorViewDetail);
         mainContainer.appendChild(divTestHolder);
     });

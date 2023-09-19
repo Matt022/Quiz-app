@@ -1,7 +1,6 @@
 import { Test } from "../../typescript_models/test";
 import { getAllTests } from "../../typescript_scripts/dbService.js";
 
-
 const mainContainer: HTMLDivElement = <HTMLDivElement>document.querySelector("section.main-container");
 
 getAllTests().then((tests: Test[]) => {
@@ -23,7 +22,6 @@ getAllTests().then((tests: Test[]) => {
         anchorViewDetail.textContent = "View test detail";
         anchorViewDetail.href = `/admin/pages/testDetail.html?id=${test.id}`;
 
-        // anchorViewDetail.href = `/pages/testApplying.html?id=${test.id}`;
         divTestHolder.appendChild(anchorViewDetail);
 
         mainContainer.appendChild(divTestHolder);

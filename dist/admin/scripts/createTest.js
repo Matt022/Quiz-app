@@ -1,4 +1,5 @@
 import { addTest } from "../../typescript_scripts/dbService.js";
+import { getData } from "../../typescript_scripts/helpers.js";
 const test = {
     id: 0,
     nazov: "",
@@ -37,6 +38,7 @@ function renderOtazka(otazka, index) {
         otazka.text = e.target.value;
     });
     const odpovedeDiv = document.createElement("div");
+    // každá otázka má 4 odpovede
     for (let i = 0; i < 4; i++) {
         const odpoved = otazka.odpovede[i];
         const odpovedDiv = document.createElement("div");
@@ -82,38 +84,7 @@ saveBtn.addEventListener("click", () => {
     // Získáme hodnotu názvu testu z inputu
     const nazovInput = document.getElementById("nazov");
     test.nazov = nazovInput.value;
-    // Získáme seznam všech otázek
-    const otazkyDivs = document.querySelectorAll(".otazka");
-    // Vytvorme pole pre otázky
-    const otazky = [];
-    // pre každú otázku ako DIV vyrobíme skript na vytiahnutie odpovedí označených či už správne alebo nesprávne
-    for (let i = 0; i < otazkyDivs.length; i++) {
-        const otazka = {
-            text: "",
-            odpovede: [],
-        };
-        // získame znenie otázky a priradíme do vytvoreného objektu
-        const otazkaInput = otazkyDivs[i].querySelector("input[type='text']");
-        otazka.text = otazkaInput.value;
-        // všetky odpovede a k nim správne odpovede
-        // správne odpovede zistíme vo for cykle nižšie
-        const odpovedeInputs = otazkyDivs[i].querySelectorAll(".odpoved input[type='text']");
-        const spravneInputs = otazkyDivs[i].querySelectorAll(".odpoved input[type='checkbox']");
-        let spravneOdpovedeCounter = 0;
-        for (let j = 0; j < odpovedeInputs.length; j++) {
-            if (spravneInputs[j].checked) {
-                spravneOdpovedeCounter++;
-            }
-            const odpoved = {
-                text: odpovedeInputs[j].value,
-                jeSpravna: spravneInputs[j].checked,
-            };
-            otazka.odpovede.push(odpoved);
-        }
-        otazky.push(otazka);
-    }
-    test.otazky = otazky;
-    console.log(test);
+    test.otazky = getData();
     addTest(test).then(() => {
         alert("Test was added to database.");
     });
