@@ -62,10 +62,10 @@ function renderQuestionElements(question, index) {
             text: "",
             isCorrect: false,
         };
-        const spravnaOdpovedInput = document.createElement("input");
-        spravnaOdpovedInput.type = "checkbox";
-        spravnaOdpovedInput.checked = answer ? answer.isCorrect : false;
-        spravnaOdpovedInput.addEventListener("change", (e) => {
+        const correctAnswerInput = document.createElement("input");
+        correctAnswerInput.type = "checkbox";
+        correctAnswerInput.checked = answer ? answer.isCorrect : false;
+        correctAnswerInput.addEventListener("change", (e) => {
             newAnswer.isCorrect = e.target.checked;
         });
         const correctAnswerLabel = document.createElement("label");
@@ -74,7 +74,7 @@ function renderQuestionElements(question, index) {
         const correctAnswerDiv = document.createElement("div");
         correctAnswerDiv.classList.add("correctAnswerDiv");
         correctAnswerDiv.appendChild(correctAnswerLabel);
-        correctAnswerDiv.appendChild(spravnaOdpovedInput);
+        correctAnswerDiv.appendChild(correctAnswerInput);
         answerDiv.appendChild(correctAnswerDiv);
         answersDiv.appendChild(answerDiv);
         question.answers[i] = newAnswer;
@@ -91,12 +91,12 @@ function renderQuestionElements(question, index) {
 }
 saveBtn.addEventListener("click", () => {
     // Získáme hodnotu názvu testu z inputu
-    const nazovInput = document.getElementById("title");
-    test.title = nazovInput.value;
+    const testTitleInput = document.getElementById("title");
+    test.title = testTitleInput.value;
     test.questions = getData();
     const isAnyQuestionNameEmpty = test.questions.some((question) => question.answers.some((answer) => answer.text === ""));
     if (isAnyQuestionNameEmpty) {
-        alert("Vyplňte všetky otázky");
+        alert("Complete all questions");
         return;
     }
     addTest(test).then(() => {

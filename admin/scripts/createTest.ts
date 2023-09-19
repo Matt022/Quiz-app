@@ -1,5 +1,5 @@
-import { Answer } from "../../typescript_models/odpoved";
-import { Question } from "../../typescript_models/otazka";
+import { Answer } from "../../typescript_models/answer";
+import { Question } from "../../typescript_models/question";
 import { Test } from '../../typescript_models/test';
 import { addTest } from "../../typescript_scripts/dbService.js";
 import { getData } from "../../typescript_scripts/helpers.js";
@@ -79,11 +79,11 @@ function renderQuestionElements(question: Question, index: number): void {
             isCorrect: false,
         };
 
-        const spravnaOdpovedInput: HTMLInputElement = document.createElement("input");
-        spravnaOdpovedInput.type = "checkbox";
-        spravnaOdpovedInput.checked = answer ? answer.isCorrect : false;
+        const correctAnswerInput: HTMLInputElement = document.createElement("input");
+        correctAnswerInput.type = "checkbox";
+        correctAnswerInput.checked = answer ? answer.isCorrect : false;
 
-        spravnaOdpovedInput.addEventListener("change", (e: Event) => {
+        correctAnswerInput.addEventListener("change", (e: Event) => {
             newAnswer.isCorrect = (e.target as HTMLInputElement).checked;
         });
 
@@ -95,7 +95,7 @@ function renderQuestionElements(question: Question, index: number): void {
         const correctAnswerDiv: HTMLDivElement = document.createElement("div");
         correctAnswerDiv.classList.add("correctAnswerDiv");
         correctAnswerDiv.appendChild(correctAnswerLabel);
-        correctAnswerDiv.appendChild(spravnaOdpovedInput);
+        correctAnswerDiv.appendChild(correctAnswerInput);
         answerDiv.appendChild(correctAnswerDiv);
 
         answersDiv.appendChild(answerDiv);
@@ -118,8 +118,8 @@ function renderQuestionElements(question: Question, index: number): void {
 
 saveBtn.addEventListener("click", () => {
     // Získáme hodnotu názvu testu z inputu
-    const nazovInput: HTMLInputElement = <HTMLInputElement>document.getElementById("title");
-    test.title = nazovInput.value;
+    const testTitleInput: HTMLInputElement = <HTMLInputElement>document.getElementById("title");
+    test.title = testTitleInput.value;
 
     test.questions = getData();
 
@@ -128,7 +128,7 @@ saveBtn.addEventListener("click", () => {
     );
 
     if (isAnyQuestionNameEmpty) {
-        alert("Vyplňte všetky otázky");
+        alert("Complete all questions");
         return;
     }
 
