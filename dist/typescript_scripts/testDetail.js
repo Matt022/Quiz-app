@@ -111,7 +111,7 @@ function renderOtazka(otazka, index) {
     const otazkaDiv = document.createElement("div");
     otazkaDiv.className = "otazka";
     const otazkaLabel = document.createElement("label");
-    otazkaLabel.textContent = `Otázka ${index + 1}:`;
+    otazkaLabel.textContent = `Question ${index + 1}:`;
     const buttonToDelete = document.createElement("button");
     buttonToDelete.textContent = "Delete";
     buttonToDelete.addEventListener("click", () => {

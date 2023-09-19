@@ -139,7 +139,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
     otazkaDiv.className = "otazka";
 
     const otazkaLabel: HTMLLabelElement = document.createElement("label");
-    otazkaLabel.textContent = `Otázka ${index + 1}:`;
+    otazkaLabel.textContent = `Question ${index + 1}:`;
 
     const buttonToDelete: HTMLButtonElement = document.createElement("button");
     buttonToDelete.textContent = "Delete";

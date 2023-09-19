@@ -3,7 +3,7 @@ body {
 }
 
 .test {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f0f0f0;
@@ -111,10 +111,17 @@ body {
 /*---------------------------*/
 .test h1 {
     font-size: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid black;
 }
 
 .test h1 span {
     padding: 10px;
+}
+
+.test div#questions {
+    height: 640px;
+    overflow-y: auto;
 }
 
 .test div#questions .question {
@@ -123,56 +130,64 @@ body {
     padding: 10px 30px 30px 30px;
 }
 
-
-.test .question-text {
+.test div#questions .question .question-text {
     font-weight: bold;
 }
 
-.answer {
+.test div#questions .question div.answers .answer {
     margin-top: 10px;
     border: 1px solid black;
     border-radius: 7px;
     padding: 0 10px;
 }
 
-.correct-answer {
-    color: green;
+.test div#questions .question div.answers .answer:has(.correct-answer) {
+    background-color: green;
+}
+
+.test div#questions .question div.answers .answer .correct-answer {
+    color: white;
     font-weight: bold;
 }
 
-.incorrect-answer {
+.test div#questions .question div.answers .answer .incorrect-answer {
     font-weight: bold;
 }
 
 /*-----------*/
-#otazky-container {
+.test div.test-update-questions {
     padding: 10px;
 }
 
-.otazka {
-    padding: 10px;
+.test div.test-update-questions .otazka {
+    padding: 20px;
     width: 700px;
-    border: 1px solid black;
     margin: auto;
     margin-bottom: 30px;
+    border-radius: 7px;
+    background: #ffffff;
+    box-shadow: 2px 2px 10px #666666,
+        -2px -2px 10px #ffffff;
 }
 
-.otazka>label {
+.test div.test-update-questions .otazka > label {
     margin-left: 20px;
+    font-weight: bold;
 }
 
-.otazka>input {
+.test div.test-update-questions .otazka > input {
     width: 300px;
     margin-bottom: 30px;
     margin-left: 20px;
+    margin-top: 10px;
     padding: 10px;
 }
 
-.otazka>div {
+/* .test div.test-update-questions .otazka > div {
     margin-bottom: 20px;
-}
+} */
 
-.odpoved {
+.test div.test-update-questions .otazka div .odpoved {
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -180,12 +195,12 @@ body {
     width: 90%;
 }
 
-.odpoved > input {
+.test div.test-update-questions .otazka div .odpoved > input {
     width: 300px;
     padding: 10px 20px;
 }
 
-.spravnaOdpovedDiv {
+.test div.test-update-questions .otazka div .odpoved .spravnaOdpovedDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -194,10 +209,25 @@ body {
     width: 170px;
 }
 
-div.test-update-questions {
+.test div.test-update-questions {
     background-color: #fff;
-    height: 640px;
+    height: 620px;
     overflow-y: auto;
     display: none;
     padding: 30px;
+}
+
+.test div.test-update-questions button {
+    font-size: 18px;
+    background-color: red;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    margin-left: 20px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.test div.test-update-questions button:hover {
+    background-color: rgb(211, 5, 5);
 }
