@@ -29,13 +29,23 @@ function renderOtazka(otazka, index) {
     const otazkaDiv = document.createElement("div");
     otazkaDiv.className = "otazka";
     const otazkaLabel = document.createElement("label");
-    otazkaLabel.textContent = `Otázka ${index + 1}:`;
+    otazkaLabel.textContent = `Question ${index + 1}:`;
     const otazkaInput = document.createElement("input");
     otazkaInput.type = "text";
     otazkaInput.value = otazka.text;
-    otazkaInput.placeholder = "Znenie otázky";
+    otazkaInput.placeholder = "Question wording";
     otazkaInput.addEventListener("input", (e) => {
         otazka.text = e.target.value;
+    });
+    const buttonToDeleteQuestion = document.createElement("button");
+    buttonToDeleteQuestion.classList.add("deleteButton");
+    buttonToDeleteQuestion.textContent = "Delete question";
+    buttonToDeleteQuestion.addEventListener("click", () => {
+        if (confirm("Do you really want to delete this question?")) {
+            const questionContainer = document.querySelector("div#otazky-container");
+            questionContainer.removeChild(otazkaDiv);
+            test.otazky.splice(index);
+        }
     });
     const odpovedeDiv = document.createElement("div");
     // každá otázka má 4 odpovede
@@ -45,7 +55,7 @@ function renderOtazka(otazka, index) {
         odpovedDiv.className = "odpoved";
         const odpovedInput = document.createElement("input");
         odpovedInput.type = "text";
-        odpovedInput.placeholder = "Odpoved";
+        odpovedInput.placeholder = "Answer";
         odpovedInput.value = odpoved ? odpoved.text : "";
         // Vytvorme nový objekt odpovede v každej iterácii
         const novaOdpoved = {
@@ -55,8 +65,6 @@ function renderOtazka(otazka, index) {
         const spravnaOdpovedInput = document.createElement("input");
         spravnaOdpovedInput.type = "checkbox";
         spravnaOdpovedInput.checked = odpoved ? odpoved.jeSpravna : false;
-        // Vytvorme dočasnú premennú pre aktuálnu hodnotu i
-        const currentI = i;
         spravnaOdpovedInput.addEventListener("change", (e) => {
             novaOdpoved.jeSpravna = e.target.checked;
         });
@@ -69,7 +77,7 @@ function renderOtazka(otazka, index) {
         spravnaOdpovedDiv.appendChild(spravnaOdpovedInput);
         odpovedDiv.appendChild(spravnaOdpovedDiv);
         odpovedeDiv.appendChild(odpovedDiv);
-        otazka.odpovede[currentI] = novaOdpoved;
+        otazka.odpovede[i] = novaOdpoved;
     }
     const brElement = document.createElement("br");
     const hr = document.createElement("hr");
@@ -78,6 +86,7 @@ function renderOtazka(otazka, index) {
     otazkaDiv.appendChild(otazkaInput);
     otazkaDiv.appendChild(hr);
     otazkaDiv.appendChild(odpovedeDiv);
+    otazkaDiv.appendChild(buttonToDeleteQuestion);
     otazkyContainer.appendChild(otazkaDiv);
 }
 saveBtn.addEventListener("click", () => {
@@ -85,6 +94,11 @@ saveBtn.addEventListener("click", () => {
     const nazovInput = document.getElementById("nazov");
     test.nazov = nazovInput.value;
     test.otazky = getData();
+    const isAnyQuestionNameEmpty = test.otazky.some(otazka => otazka.odpovede.some(odpoved => odpoved.text === ""));
+    if (isAnyQuestionNameEmpty) {
+        alert("Vyplňte všetky otázky");
+        return;
+    }
     addTest(test).then(() => {
         alert("Test was added to database.");
     });

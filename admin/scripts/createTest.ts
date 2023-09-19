@@ -32,21 +32,32 @@ function addOtazka(): void {
     renderOtazka(otazka, test.otazky.length - 1);
 }
 
-addOtazka()
+addOtazka();
 
 function renderOtazka(otazka: Otazka, index: number): void {
     const otazkaDiv: HTMLDivElement = document.createElement("div");
     otazkaDiv.className = "otazka";
 
     const otazkaLabel: HTMLLabelElement = document.createElement("label");
-    otazkaLabel.textContent = `Otázka ${index + 1}:`;
+    otazkaLabel.textContent = `Question ${index + 1}:`;
 
     const otazkaInput: HTMLInputElement = document.createElement("input");
     otazkaInput.type = "text";
     otazkaInput.value = otazka.text;
-    otazkaInput.placeholder = "Znenie otázky"
+    otazkaInput.placeholder = "Question wording";
     otazkaInput.addEventListener("input", (e: Event) => {
         otazka.text = (e.target as HTMLInputElement).value;
+    });
+
+    const buttonToDeleteQuestion: HTMLButtonElement = document.createElement("button");
+    buttonToDeleteQuestion.classList.add("deleteButton");
+    buttonToDeleteQuestion.textContent = "Delete question";
+    buttonToDeleteQuestion.addEventListener("click", () => {
+        if (confirm("Do you really want to delete this question?")) {
+            const questionContainer: HTMLDivElement = <HTMLDivElement>document.querySelector("div#otazky-container");
+            questionContainer.removeChild(otazkaDiv);
+            test.otazky.splice(index);
+        }
     });
 
     const odpovedeDiv: HTMLDivElement = document.createElement("div");
@@ -59,7 +70,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
 
         const odpovedInput: HTMLInputElement = document.createElement("input");
         odpovedInput.type = "text";
-        odpovedInput.placeholder = "Odpoved"
+        odpovedInput.placeholder = "Answer";
         odpovedInput.value = odpoved ? odpoved.text : "";
 
         // Vytvorme nový objekt odpovede v každej iterácii
@@ -72,9 +83,6 @@ function renderOtazka(otazka: Otazka, index: number): void {
         spravnaOdpovedInput.type = "checkbox";
         spravnaOdpovedInput.checked = odpoved ? odpoved.jeSpravna : false;
 
-        // Vytvorme dočasnú premennú pre aktuálnu hodnotu i
-        const currentI: number = i;
-
         spravnaOdpovedInput.addEventListener("change", (e: Event) => {
             novaOdpoved.jeSpravna = (e.target as HTMLInputElement).checked;
         });
@@ -83,7 +91,7 @@ function renderOtazka(otazka: Otazka, index: number): void {
         spravnaOdpovedLabel.textContent = "Correct answer";
 
         odpovedDiv.appendChild(odpovedInput);
-        
+
         const spravnaOdpovedDiv: HTMLDivElement = document.createElement("div");
         spravnaOdpovedDiv.classList.add("spravnaOdpovedDiv");
         spravnaOdpovedDiv.appendChild(spravnaOdpovedLabel);
@@ -91,10 +99,10 @@ function renderOtazka(otazka: Otazka, index: number): void {
         odpovedDiv.appendChild(spravnaOdpovedDiv);
 
         odpovedeDiv.appendChild(odpovedDiv);
-        otazka.odpovede[currentI] = novaOdpoved;
+        otazka.odpovede[i] = novaOdpoved;
     }
 
-    const brElement: HTMLBRElement = document.createElement("br")
+    const brElement: HTMLBRElement = document.createElement("br");
     const hr: HTMLHRElement = document.createElement("hr");
 
     otazkaDiv.appendChild(otazkaLabel);
@@ -102,6 +110,8 @@ function renderOtazka(otazka: Otazka, index: number): void {
     otazkaDiv.appendChild(otazkaInput);
     otazkaDiv.appendChild(hr);
     otazkaDiv.appendChild(odpovedeDiv);
+    otazkaDiv.appendChild(buttonToDeleteQuestion);
+
 
     otazkyContainer.appendChild(otazkaDiv);
 }
@@ -110,9 +120,18 @@ saveBtn.addEventListener("click", () => {
     // Získáme hodnotu názvu testu z inputu
     const nazovInput: HTMLInputElement = <HTMLInputElement>document.getElementById("nazov");
     test.nazov = nazovInput.value;
-    
+
     test.otazky = getData();
 
+    const isAnyQuestionNameEmpty: boolean = test.otazky.some(otazka =>
+        otazka.odpovede.some(odpoved => odpoved.text === "")
+    );
+
+    if (isAnyQuestionNameEmpty) {
+        alert("Vyplňte všetky otázky");
+        return;
+    }
+    
     addTest(test).then(() => {
         alert("Test was added to database.");
     });

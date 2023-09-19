@@ -34,7 +34,7 @@ input[type="checkbox"] {
 }
 
 main {
-    padding: 30px;
+    padding: 0 30px;
     background-color: #f1f1f1;
 }
 
@@ -48,14 +48,20 @@ main section.main-container div#test-form {
     margin: 0 auto;
 }
 
+main section.main-container div#test-form > label {
+    font-weight: bold;
+}
+
 main section.main-container div#test-form div.buttons {
     display: flex;
-    width: 230px;
     justify-content: space-between;
+    width: 230px;
+    margin-top: 10px;
 }
 
 main section.main-container div#test-form div.buttons button {
     background-color: #008CBA;
+    font-weight: bold;
     border-radius: 7px;
     color: white;
     border: none;
@@ -71,31 +77,61 @@ main section.main-container div#test-form div.buttons button#save {
     cursor: pointer;
 }
 
-#otazky-container {
+main section.main-container div#test-form div#otazky-container {
     padding: 10px;
+    height: 520px;
+    overflow-y: auto;
 }
 
-.otazka {
-    padding: 10px;
+main section.main-container div#test-form div#otazky-container div.otazka {
+    padding: 15px 20px;
     width: 700px;
-    border: 1px solid black;
+    border-radius: 7px;
+    background: #ffffff;
+    box-shadow: 5px 5px 10px #666666,
+        -5px -5px 10px #ebebeb;
+
+    margin-bottom: 30px;
 }
 
-.otazka > label {
+main section.main-container div#test-form div#otazky-container div.otazka > label {
     margin-left: 20px;
+    font-weight: bold;
 }
 
-.otazka>input {
+main section.main-container div#test-form div#otazky-container div.otazka > input {
     width: 300px;
     margin-bottom: 30px;
     margin-left: 20px;
+    margin-top: 10px;
 }
 
-.otazka>div {
+main section.main-container div#test-form div#otazky-container div.otazka > div {
     margin-bottom: 20px;
 }
 
-.odpoved {
+main section.main-container div#test-form div#otazky-container div.otazka:first-child button {
+    display: none;
+}
+
+main section.main-container div#test-form div#otazky-container div.otazka button {
+    font-size: 17px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin-left: 20px;
+    transition: all 0.2s ease-in-out;
+}
+
+main section.main-container div#test-form div#otazky-container div.otazka button:hover {
+    background-color: rgb(204, 4, 4);
+}
+
+main section.main-container div#test-form div#otazky-container div.otazka div div.odpoved {
     padding: 20px;
     display: flex;
     justify-content: space-between;
@@ -103,11 +139,11 @@ main section.main-container div#test-form div.buttons button#save {
     width: 90%;
 }
 
-.odpoved > input {
+main section.main-container div#test-form div#otazky-container div.otazka div div.odpoved > input {
     width: 300px;
 }
 
-.spravnaOdpovedDiv {
+main section.main-container div#test-form div#otazky-container div.otazka div div.odpoved div.spravnaOdpovedDiv {
     display: flex;
     justify-content: space-between;
     align-items: center;
