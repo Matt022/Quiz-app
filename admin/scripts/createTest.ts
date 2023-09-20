@@ -100,8 +100,6 @@ function renderQuestionElements(question: Question, index: number): void {
     // Pridáme event listener, aby sme mohli otázku odstrániť
     buttonToDeleteQuestion.addEventListener("click", () => {
         if (confirm("Do you really want to delete this question?")) {
-            // const questionContainer: HTMLDivElement = <HTMLDivElement>document.querySelector("div#questions-container");
-            // questionContainer.removeChild(questionDiv);
             questionDiv.remove();
             test.questions.splice(index, 1); // Odstránime otázku zo zoznamu otázok
             updateQuestionNumbers();
@@ -178,10 +176,10 @@ function renderQuestionElements(question: Question, index: number): void {
 // Funkcia na aktualizáciu čísel otázok
 function updateQuestionNumbers(): void {
     const questionContainers: NodeListOf<HTMLDivElement> = questionContainerDiv.querySelectorAll('.question');
-    questionContainers.forEach((container: HTMLDivElement, i: number) => {
-        const label: HTMLLabelElement = <HTMLLabelElement>container.querySelector('label');
+    for (let i: number = 0; i < questionContainers.length; i++) {
+        const label: HTMLLabelElement = <HTMLLabelElement>questionContainers[i].querySelector('label');
         if (label) {
             label.textContent = `Question ${i + 1}:`;
         }
-    });
+    }
 }

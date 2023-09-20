@@ -185,12 +185,12 @@ if (testId != null) {
             // Funkcia na aktualizáciu čísel otázok
             function updateQuestionNumbers() {
                 const questionContainers = testUpdateQuestionsContainer.querySelectorAll('.question');
-                questionContainers.forEach((container, i) => {
-                    const label = container.querySelector('label');
+                for (let i = 0; i < questionContainers.length; i++) {
+                    const label = questionContainers[i].querySelector('label');
                     if (label) {
                         label.textContent = `Question ${i + 1}:`;
                     }
-                });
+                }
             }
         }
         else {

@@ -240,12 +240,12 @@ if (testId != null) {
             // Funkcia na aktualizáciu čísel otázok
             function updateQuestionNumbers(): void {
                 const questionContainers: NodeListOf<HTMLDivElement> = testUpdateQuestionsContainer.querySelectorAll('.question');
-                questionContainers.forEach((container: HTMLDivElement, i: number) => {
-                    const label: HTMLLabelElement = <HTMLLabelElement>container.querySelector('label');
+                for (let i: number = 0; i < questionContainers.length; i++) {
+                    const label: HTMLLabelElement = <HTMLLabelElement>questionContainers[i].querySelector('label');
                     if (label) {
                         label.textContent = `Question ${i + 1}:`;
                     }
-                });
+                }
             }
 
         } else {
