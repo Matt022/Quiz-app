@@ -93,8 +93,8 @@ editTestBtn.addEventListener("click", () => {
     });
 });
 disableChangesBtn.addEventListener("click", () => {
-    const testNameElement = document.getElementById("title");
-    testNameElement.contentEditable = "false";
+    const testTitleElement = document.getElementById("title");
+    testTitleElement.contentEditable = "false";
     const questionsDivEl = document.getElementById("questions");
     questionsDivEl.style.display = "block";
     editTestBtn.style.display = "inline-block";
@@ -108,8 +108,8 @@ disableChangesBtn.addEventListener("click", () => {
     testUpdateQuestionsContainer.style.display = "none";
 });
 function renderQuestionElements(question, index) {
-    const otazkaDiv = document.createElement("div");
-    otazkaDiv.className = "question";
+    const questionDivContainer = document.createElement("div");
+    questionDivContainer.className = "question";
     const otazkaLabel = document.createElement("label");
     otazkaLabel.textContent = `Question ${index + 1}:`;
     const buttonToDelete = document.createElement("button");
@@ -120,53 +120,53 @@ function renderQuestionElements(question, index) {
             testUpdateQuestionsContainer.removeChild(testUpdateQuestionsContainer.children[index]);
         }
     });
-    const otazkaInput = document.createElement("input");
-    otazkaInput.type = "text";
-    otazkaInput.value = question.text;
-    otazkaInput.placeholder = "Znenie otázky";
-    otazkaInput.addEventListener("input", (e) => {
+    const questionInput = document.createElement("input");
+    questionInput.type = "text";
+    questionInput.value = question.text;
+    questionInput.placeholder = "Question";
+    questionInput.addEventListener("input", (e) => {
         question.text = e.target.value;
     });
-    const odpovedeDiv = document.createElement("div");
+    const answersDiv = document.createElement("div");
     // každá otázka má presne 4 answers
     for (let i = 0; i < 4; i++) {
         const answer = question.answers[i];
-        const odpovedDiv = document.createElement("div");
-        odpovedDiv.className = "answer";
-        const odpovedInput = document.createElement("input");
-        odpovedInput.type = "text";
-        odpovedInput.placeholder = "Odpoved";
-        odpovedInput.value = answer ? answer.text : "";
+        const answerDiv = document.createElement("div");
+        answerDiv.className = "answer";
+        const answerInput = document.createElement("input");
+        answerInput.type = "text";
+        answerInput.placeholder = "Answer";
+        answerInput.value = answer ? answer.text : "";
         // Vytvorme nový objekt answers v každej iterácii
-        const novaOdpoved = {
+        const newAnswer = {
             text: "",
             isCorrect: false,
         };
-        const spravnaOdpovedInput = document.createElement("input");
-        spravnaOdpovedInput.type = "checkbox";
-        spravnaOdpovedInput.checked = answer ? answer.isCorrect : false;
-        spravnaOdpovedInput.addEventListener("change", (e) => {
-            novaOdpoved.isCorrect = e.target.checked;
+        const correctAnswerInput = document.createElement("input");
+        correctAnswerInput.type = "checkbox";
+        correctAnswerInput.checked = answer ? answer.isCorrect : false;
+        correctAnswerInput.addEventListener("change", (e) => {
+            newAnswer.isCorrect = e.target.checked;
         });
-        const spravnaOdpovedLabel = document.createElement("label");
-        spravnaOdpovedLabel.textContent = "Correct answer";
-        odpovedDiv.appendChild(odpovedInput);
+        const correctAnswerLabel = document.createElement("label");
+        correctAnswerLabel.textContent = "Correct answer";
+        answerDiv.appendChild(answerInput);
         const correctAnswerDiv = document.createElement("div");
         correctAnswerDiv.classList.add("correctAnswerDiv");
-        correctAnswerDiv.appendChild(spravnaOdpovedLabel);
-        correctAnswerDiv.appendChild(spravnaOdpovedInput);
-        odpovedDiv.appendChild(correctAnswerDiv);
-        odpovedeDiv.appendChild(odpovedDiv);
-        question.answers[i] = novaOdpoved;
+        correctAnswerDiv.appendChild(correctAnswerLabel);
+        correctAnswerDiv.appendChild(correctAnswerInput);
+        answerDiv.appendChild(correctAnswerDiv);
+        answersDiv.appendChild(answerDiv);
+        question.answers[i] = newAnswer;
     }
     const brElement = document.createElement("br");
     const hr = document.createElement("hr");
-    otazkaDiv.appendChild(otazkaLabel);
-    otazkaDiv.appendChild(brElement);
-    otazkaDiv.appendChild(otazkaInput);
-    otazkaDiv.appendChild(hr);
-    otazkaDiv.appendChild(odpovedeDiv);
-    otazkaDiv.appendChild(buttonToDelete);
+    questionDivContainer.appendChild(otazkaLabel);
+    questionDivContainer.appendChild(brElement);
+    questionDivContainer.appendChild(questionInput);
+    questionDivContainer.appendChild(hr);
+    questionDivContainer.appendChild(answersDiv);
+    questionDivContainer.appendChild(buttonToDelete);
     const testUpdateQuestionsContainer = document.querySelector("div.test-update-questions");
-    testUpdateQuestionsContainer.appendChild(otazkaDiv);
+    testUpdateQuestionsContainer.appendChild(questionDivContainer);
 }

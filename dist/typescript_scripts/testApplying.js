@@ -14,8 +14,8 @@ if (quizId != null) {
             // Skontrolujeme, či sme načítali platný test
             if (test) {
                 // Zachytenie ID spanu na vloženie názvu testu
-                const testDetailName = document.getElementById("testDetail");
-                testDetailName.textContent = test.title;
+                const testDetailTitle = document.getElementById("testDetail");
+                testDetailTitle.textContent = test.title;
                 const correctAnswersInTest = []; // Pole pre uchovávanie informácií o správnych odpovediach v teste
                 // Prejdeme všetky otázky v teste
                 for (let i = 0; i < test.questions.length; i++) {
@@ -30,10 +30,10 @@ if (quizId != null) {
                     const correctAnswersForQuestion = []; // Pole pre uchovávanie správnych odpovedí pre túto otázku
                     // -- kód pre inicializovanie a inkrementovanie správnych odpovedí
                     // kód slúži na to, aby sme uživateľovi neskôr dali vedieť, či je jedna správna odpoveď alebo viac ako jedna správna odpoveď 
-                    let spravneOdpovedeCounter = 0;
+                    let correctAnswerCounter = 0;
                     test.questions[i].answers.forEach((answer) => {
                         if (answer.isCorrect) {
-                            spravneOdpovedeCounter++;
+                            correctAnswerCounter++;
                         }
                     });
                     // --
@@ -43,7 +43,7 @@ if (quizId != null) {
                         const answerLabel = document.createElement('label');
                         const checkboxInput = document.createElement('input');
                         // --
-                        if (spravneOdpovedeCounter > 1) {
+                        if (correctAnswerCounter > 1) {
                             checkboxInput.type = 'checkbox';
                         }
                         else {
@@ -104,7 +104,7 @@ if (quizId != null) {
                     Pomocou some kontrolujeme, či aktuálna označená odpoveď (selectedAnswer.value) sa zhoduje s nejakou správnou odpoveďou pre túto otázku (correctAnswersForQuestion).
                 */
                 const selectedCorrectAnswers = Array.from(selectedAnswers)
-                    .filter(selectedAnswer => correctAnswersForQuestion.some(correctAnswer => correctAnswer.answer === parseInt(selectedAnswer.value))).length;
+                    .filter((selectedAnswer) => correctAnswersForQuestion.some((correctAnswer) => correctAnswer.answer === parseInt(selectedAnswer.value))).length;
                 // Ak boli všetky správne answers označené a neboli označené nadbytočné answers, pridáme bod
                 /* Tu sa kontroluje, či počet označených správnych odpovedí pre aktuálnu otázku sa zhoduje s celkovým počtom správnych odpovedí pre túto otázku (correctAnswersForQuestion.length)
                 a či počet označených odpovedí sa zhoduje s celkovým počtom odpovedí pre túto otázku (selectedAnswers.length).
@@ -115,7 +115,7 @@ if (quizId != null) {
             }
             // Vypočítame percentuálne hodnotenie a zobrazíme ho v upozornení
             const scorePercentage = (correctAnswers / totalQuestions) * 100;
-            alert(`Váš výsledok je ${scorePercentage.toFixed(2)}%`);
+            alert(`Your score from this test is: ${scorePercentage.toFixed(2)}%`);
             // resetujeme formulár
             form.reset();
         }
