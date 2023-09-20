@@ -1,643 +1,670 @@
 {
-    "tests": [
+  "tests": [
+    {
+      "id": 1,
+      "title": "Fundamentals of IT",
+      "questions": [
         {
-            "id": 1,
-            "title": "Fundamentals of IT",
-            "questions": [
-                {
-                    "text": "What does the abbreviation IT stand for?",
-                    "answers": [
-                        {
-                            "text": "Information Technology",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Intelligent Phones",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Innovative Technology",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Internet Trend",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is an operating system?",
-                    "answers": [
-                        {
-                            "text": "Software that controls a computer's hardware",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Type of computer disk",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Wireless network",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Installation disk",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is RAM?",
-                    "answers": [
-                        {
-                            "text": "Memory with short-term data storage",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Type of processor",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Graphics card",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Operating system",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is the purpose of a firewall in a computer network?",
-                    "answers": [
-                        {
-                            "text": "Protection of the network from unauthorized access",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Faster internet connection",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Protection against viruses on the computer",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "System acceleration",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What does the abbreviation URL stand for?",
-                    "answers": [
-                        {
-                            "text": "Uniform Resource Locator",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Universal Remote Language",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "User Registration List",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Unified Resource Language",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "Which of the following file types is compressed?",
-                    "answers": [
-                        {
-                            "text": "ZIP",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "TXT",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "JPEG",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "PDF",
-                            "isCorrect": false
-                        }
-                    ]
-                }
-            ]
+          "text": "What does the abbreviation IT stand for?",
+          "answers": [
+            {
+              "text": "Information Technology",
+              "isCorrect": true
+            },
+            {
+              "text": "Intelligent Phones",
+              "isCorrect": false
+            },
+            {
+              "text": "Innovative Technology",
+              "isCorrect": false
+            },
+            {
+              "text": "Internet Trend",
+              "isCorrect": false
+            }
+          ]
         },
         {
-            "id": 2,
-            "title": "Web Technologies Test",
-            "questions": [
-                {
-                    "text": "What is HTML?",
-                    "answers": [
-                        {
-                            "text": "Markup language for creating web pages",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Programming language for mobile applications",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Operating system",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Type of compression format",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "Which language is used for styling web pages?",
-                    "answers": [
-                        {
-                            "text": "CSS",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "JavaScript",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "HTML",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "PHP",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is the main function of JavaScript on web pages?",
-                    "answers": [
-                        {
-                            "text": "Interactivity and dynamic functionality",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Text formatting",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Website security",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Data storage",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is HTTP?",
-                    "answers": [
-                        {
-                            "text": "Hypertext Transfer Protocol",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "High-Tech Programming Hub",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Hyperlink Text Program",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Hard To Translate Protocol",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "Which of the following technologies is most commonly used for creating dynamic web pages?",
-                    "answers": [
-                        {
-                            "text": "Ajax",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "SQL",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "FTP",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "XML",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What are cookies on websites?",
-                    "answers": [
-                        {
-                            "text": "Small text files stored in the user's browser",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "A list of favorite websites",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A login form for a website",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A type of file attachment on websites",
-                            "isCorrect": false
-                        }
-                    ]
-                }
-            ]
+          "text": "What is an operating system?",
+          "answers": [
+            {
+              "text": "Software that controls a computer's hardware",
+              "isCorrect": true
+            },
+            {
+              "text": "Type of computer disk",
+              "isCorrect": false
+            },
+            {
+              "text": "Wireless network",
+              "isCorrect": false
+            },
+            {
+              "text": "Installation disk",
+              "isCorrect": false
+            }
+          ]
         },
         {
-            "id": 3,
-            "title": "Programming Languages Test",
-            "questions": [
-                {
-                    "text": "What is the syntax of a programming language?",
-                    "answers": [
-                        {
-                            "text": "A set of words and rules that define how to write valid code",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "The purpose of a programming language",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "The basic function of an operating system",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "The type of programming language",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "Which programming language is commonly used for developing iOS mobile applications?",
-                    "answers": [
-                        {
-                            "text": "Java",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "C#",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Swift",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Python",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is a stack in programming?",
-                    "answers": [
-                        {
-                            "text": "A data structure for storing values in a list",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "A basic data sorting algorithm",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A type of programming language",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A command to print text on the screen",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is a loop in programming?",
-                    "answers": [
-                        {
-                            "text": "A process that repeats certain parts of code",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "A command to terminate a program",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A data structure for storing multiple values",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A variable type in the C language",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "Which programming language is commonly used for data processing and scientific computations?",
-                    "answers": [
-                        {
-                            "text": "Python",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "JavaScript",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Ruby",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "C#",
-                            "isCorrect": false
-                        }
-                    ]
-                }
-            ]
+          "text": "What is RAM?",
+          "answers": [
+            {
+              "text": "Memory with short-term data storage",
+              "isCorrect": true
+            },
+            {
+              "text": "Type of processor",
+              "isCorrect": false
+            },
+            {
+              "text": "Graphics card",
+              "isCorrect": false
+            },
+            {
+              "text": "Operating system",
+              "isCorrect": false
+            }
+          ]
         },
         {
-            "id": 4,
-            "title": "Computer Networks Test",
-            "questions": [
-                {
-                    "text": "What is an IP address?",
-                    "answers": [
-                        {
-                            "text": "An identification number for devices on a computer network",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "The name of a website",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "The type of internet browser",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A list of email contacts",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is the function of DNS (Domain Name System) in a network?",
-                    "answers": [
-                        {
-                            "text": "Converting domain names to IP addresses",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Protection against viruses",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Monitoring web activities",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "The type of wireless technology",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is a router?",
-                    "answers": [
-                        {
-                            "text": "A device for routing data in a network",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Type of computer processor",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Wireless keyboard",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Text editing program",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is the significance of ports in computer networks?",
-                    "answers": [
-                        {
-                            "text": "Identification of a specific service on a device",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "The type of internet browser",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Password for network access",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "The type of wireless technology",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What does the abbreviation VPN stand for?",
-                    "answers": [
-                        {
-                            "text": "Virtual Private Network",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Virtual Computer Tool",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Large Computer Network",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Video Browsing Tool",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is the advantage of using WPA2 encryption in a wireless network?",
-                    "answers": [
-                        {
-                            "text": "Increased network security",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Faster internet",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Better WiFi signal",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Replacing Ethernet cables",
-                            "isCorrect": false
-                        }
-                    ]
-                }
-            ]
+          "text": "What is the purpose of a firewall in a computer network?",
+          "answers": [
+            {
+              "text": "Protection of the network from unauthorized access",
+              "isCorrect": true
+            },
+            {
+              "text": "Faster internet connection",
+              "isCorrect": false
+            },
+            {
+              "text": "Protection against viruses on the computer",
+              "isCorrect": false
+            },
+            {
+              "text": "System acceleration",
+              "isCorrect": false
+            }
+          ]
         },
         {
-            "id": 5,
-            "title": "IT Security Test",
-            "questions": [
-                {
-                    "text": "What is phishing?",
-                    "answers": [
-                        {
-                            "text": "An attack in which sensitive information is fraudulently obtained",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "A fishing sport",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A type of computer virus",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "A bait for birds",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is the purpose of antivirus software?",
-                    "answers": [
-                        {
-                            "text": "Protection against viruses and malware",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Increasing internet speed",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Creating data backups",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Optimizing computer performance",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is a firewall?",
-                    "answers": [
-                        {
-                            "text": "A system for protecting a network from unauthorized access",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Type of firewall in a computer",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Operating system",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Mobile weather tracking app",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is a security token?",
-                    "answers": [
-                        {
-                            "text": "A device for two-factor authentication",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "WiFi network password",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Type of wireless keyboard",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "System for encrypting emails",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What does the abbreviation VPN stand for?",
-                    "answers": [
-                        {
-                            "text": "Virtual Private Network",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "Virtual Computer Tool",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Large Computer Network",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "Video Browsing Tool",
-                            "isCorrect": false
-                        }
-                    ]
-                },
-                {
-                    "text": "What is the purpose of a web certificate (SSL certificate)?",
-                    "answers": [
-                        {
-                            "text": "To secure encrypted communication between a web server and a client",
-                            "isCorrect": true
-                        },
-                        {
-                            "text": "To verify the correctness of HTML code on a web page",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "To store personal user data from a website",
-                            "isCorrect": false
-                        },
-                        {
-                            "text": "To create a backup of a website",
-                            "isCorrect": false
-                        }
-                    ]
-                }
-            ]
+          "text": "What does the abbreviation URL stand for?",
+          "answers": [
+            {
+              "text": "Uniform Resource Locator",
+              "isCorrect": true
+            },
+            {
+              "text": "Universal Remote Language",
+              "isCorrect": false
+            },
+            {
+              "text": "User Registration List",
+              "isCorrect": false
+            },
+            {
+              "text": "Unified Resource Language",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "Which of the following file types is compressed?",
+          "answers": [
+            {
+              "text": "ZIP",
+              "isCorrect": true
+            },
+            {
+              "text": "TXT",
+              "isCorrect": false
+            },
+            {
+              "text": "JPEG",
+              "isCorrect": false
+            },
+            {
+              "text": "PDF",
+              "isCorrect": false
+            }
+          ]
         }
-    ]
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Web Technologies Test",
+      "questions": [
+        {
+          "text": "What is HTML?",
+          "answers": [
+            {
+              "text": "Markup language for creating web pages",
+              "isCorrect": true
+            },
+            {
+              "text": "Programming language for mobile applications",
+              "isCorrect": false
+            },
+            {
+              "text": "Operating system",
+              "isCorrect": false
+            },
+            {
+              "text": "Type of compression format",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "Which language is used for styling web pages?",
+          "answers": [
+            {
+              "text": "CSS",
+              "isCorrect": true
+            },
+            {
+              "text": "JavaScript",
+              "isCorrect": false
+            },
+            {
+              "text": "HTML",
+              "isCorrect": false
+            },
+            {
+              "text": "PHP",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is the main function of JavaScript on web pages?",
+          "answers": [
+            {
+              "text": "Interactivity and dynamic functionality",
+              "isCorrect": true
+            },
+            {
+              "text": "Text formatting",
+              "isCorrect": false
+            },
+            {
+              "text": "Website security",
+              "isCorrect": false
+            },
+            {
+              "text": "Data storage",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is HTTP?",
+          "answers": [
+            {
+              "text": "Hypertext Transfer Protocol",
+              "isCorrect": true
+            },
+            {
+              "text": "High-Tech Programming Hub",
+              "isCorrect": false
+            },
+            {
+              "text": "Hyperlink Text Program",
+              "isCorrect": false
+            },
+            {
+              "text": "Hard To Translate Protocol",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "Which of the following technologies is most commonly used for creating dynamic web pages?",
+          "answers": [
+            {
+              "text": "Ajax",
+              "isCorrect": true
+            },
+            {
+              "text": "SQL",
+              "isCorrect": false
+            },
+            {
+              "text": "FTP",
+              "isCorrect": false
+            },
+            {
+              "text": "XML",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What are cookies on websites?",
+          "answers": [
+            {
+              "text": "Small text files stored in the user's browser",
+              "isCorrect": true
+            },
+            {
+              "text": "A list of favorite websites",
+              "isCorrect": false
+            },
+            {
+              "text": "A login form for a website",
+              "isCorrect": false
+            },
+            {
+              "text": "A type of file attachment on websites",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Programming Languages Test",
+      "questions": [
+        {
+          "text": "What is the syntax of a programming language?",
+          "answers": [
+            {
+              "text": "A set of words and rules that define how to write valid code",
+              "isCorrect": true
+            },
+            {
+              "text": "The purpose of a programming language",
+              "isCorrect": false
+            },
+            {
+              "text": "The basic function of an operating system",
+              "isCorrect": false
+            },
+            {
+              "text": "The type of programming language",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "Which programming language is commonly used for developing iOS mobile applications?",
+          "answers": [
+            {
+              "text": "Java",
+              "isCorrect": false
+            },
+            {
+              "text": "C#",
+              "isCorrect": false
+            },
+            {
+              "text": "Swift",
+              "isCorrect": true
+            },
+            {
+              "text": "Python",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is a stack in programming?",
+          "answers": [
+            {
+              "text": "A data structure for storing values in a list",
+              "isCorrect": true
+            },
+            {
+              "text": "A basic data sorting algorithm",
+              "isCorrect": false
+            },
+            {
+              "text": "A type of programming language",
+              "isCorrect": false
+            },
+            {
+              "text": "A command to print text on the screen",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is a loop in programming?",
+          "answers": [
+            {
+              "text": "A process that repeats certain parts of code",
+              "isCorrect": true
+            },
+            {
+              "text": "A command to terminate a program",
+              "isCorrect": false
+            },
+            {
+              "text": "A data structure for storing multiple values",
+              "isCorrect": false
+            },
+            {
+              "text": "A variable type in the C language",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "Which programming language is commonly used for data processing and scientific computations?",
+          "answers": [
+            {
+              "text": "Python",
+              "isCorrect": true
+            },
+            {
+              "text": "JavaScript",
+              "isCorrect": false
+            },
+            {
+              "text": "Ruby",
+              "isCorrect": false
+            },
+            {
+              "text": "C#",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Computer Networks Test",
+      "questions": [
+        {
+          "text": "What is an IP address?",
+          "answers": [
+            {
+              "text": "An identification number for devices on a computer network",
+              "isCorrect": true
+            },
+            {
+              "text": "The name of a website",
+              "isCorrect": false
+            },
+            {
+              "text": "The type of internet browser",
+              "isCorrect": false
+            },
+            {
+              "text": "A list of email contacts",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is the function of DNS (Domain Name System) in a network?",
+          "answers": [
+            {
+              "text": "Converting domain names to IP addresses",
+              "isCorrect": true
+            },
+            {
+              "text": "Protection against viruses",
+              "isCorrect": false
+            },
+            {
+              "text": "Monitoring web activities",
+              "isCorrect": false
+            },
+            {
+              "text": "The type of wireless technology",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is a router?",
+          "answers": [
+            {
+              "text": "A device for routing data in a network",
+              "isCorrect": true
+            },
+            {
+              "text": "Type of computer processor",
+              "isCorrect": false
+            },
+            {
+              "text": "Wireless keyboard",
+              "isCorrect": false
+            },
+            {
+              "text": "Text editing program",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is the significance of ports in computer networks?",
+          "answers": [
+            {
+              "text": "Identification of a specific service on a device",
+              "isCorrect": true
+            },
+            {
+              "text": "The type of internet browser",
+              "isCorrect": false
+            },
+            {
+              "text": "Password for network access",
+              "isCorrect": false
+            },
+            {
+              "text": "The type of wireless technology",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What does the abbreviation VPN stand for?",
+          "answers": [
+            {
+              "text": "Virtual Private Network",
+              "isCorrect": true
+            },
+            {
+              "text": "Virtual Computer Tool",
+              "isCorrect": false
+            },
+            {
+              "text": "Large Computer Network",
+              "isCorrect": false
+            },
+            {
+              "text": "Video Browsing Tool",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is the advantage of using WPA2 encryption in a wireless network?",
+          "answers": [
+            {
+              "text": "Increased network security",
+              "isCorrect": true
+            },
+            {
+              "text": "Faster internet",
+              "isCorrect": false
+            },
+            {
+              "text": "Better WiFi signal",
+              "isCorrect": false
+            },
+            {
+              "text": "Replacing Ethernet cables",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "IT Security Test",
+      "questions": [
+        {
+          "text": "What is phishing?",
+          "answers": [
+            {
+              "text": "An attack in which sensitive information is fraudulently obtained",
+              "isCorrect": true
+            },
+            {
+              "text": "A fishing sport",
+              "isCorrect": false
+            },
+            {
+              "text": "A type of computer virus",
+              "isCorrect": false
+            },
+            {
+              "text": "A bait for birds",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is the purpose of antivirus software?",
+          "answers": [
+            {
+              "text": "Protection against viruses and malware",
+              "isCorrect": true
+            },
+            {
+              "text": "Increasing internet speed",
+              "isCorrect": false
+            },
+            {
+              "text": "Creating data backups",
+              "isCorrect": false
+            },
+            {
+              "text": "Optimizing computer performance",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is a firewall?",
+          "answers": [
+            {
+              "text": "A system for protecting a network from unauthorized access",
+              "isCorrect": true
+            },
+            {
+              "text": "Type of firewall in a computer",
+              "isCorrect": false
+            },
+            {
+              "text": "Operating system",
+              "isCorrect": false
+            },
+            {
+              "text": "Mobile weather tracking app",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is a security token?",
+          "answers": [
+            {
+              "text": "A device for two-factor authentication",
+              "isCorrect": true
+            },
+            {
+              "text": "WiFi network password",
+              "isCorrect": false
+            },
+            {
+              "text": "Type of wireless keyboard",
+              "isCorrect": false
+            },
+            {
+              "text": "System for encrypting emails",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What does the abbreviation VPN stand for?",
+          "answers": [
+            {
+              "text": "Virtual Private Network",
+              "isCorrect": true
+            },
+            {
+              "text": "Virtual Computer Tool",
+              "isCorrect": false
+            },
+            {
+              "text": "Large Computer Network",
+              "isCorrect": false
+            },
+            {
+              "text": "Video Browsing Tool",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is the purpose of a web certificate (SSL certificate)?",
+          "answers": [
+            {
+              "text": "To secure encrypted communication between a web server and a client",
+              "isCorrect": true
+            },
+            {
+              "text": "To verify the correctness of HTML code on a web page",
+              "isCorrect": false
+            },
+            {
+              "text": "To store personal user data from a website",
+              "isCorrect": false
+            },
+            {
+              "text": "To create a backup of a website",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "test",
+      "questions": [
+        {
+          "text": "",
+          "answers": [
+            {
+              "text": "Answer 1",
+              "isCorrect": true
+            },
+            {
+              "text": "Answer 1 2",
+              "isCorrect": false
+            },
+            {
+              "text": "Answer 1 3",
+              "isCorrect": false
+            },
+            {
+              "text": "Answer 1 4",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }

@@ -44,7 +44,7 @@ function renderQuestionElements(question: Question, index: number): void {
     const questionInput: HTMLInputElement = document.createElement("input");
     questionInput.type = "text";
     questionInput.value = question.text;
-    questionInput.placeholder = "Question wording";
+    questionInput.placeholder = "Question";
     questionInput.addEventListener("input", (e: Event) => {
         question.text = (e.target as HTMLInputElement).value;
     });
@@ -121,14 +121,28 @@ saveBtn.addEventListener("click", () => {
     const testTitleInput: HTMLInputElement = <HTMLInputElement>document.getElementById("title");
     test.title = testTitleInput.value;
 
-    test.questions = getData();
+    test.questions = getData("create");
 
     const isAnyQuestionNameEmpty: boolean = test.questions.some((question: Question) =>
         question.answers.some((answer: Answer) => answer.text === "")
     );
 
+    const isAnyAnswerMarked: boolean = test.questions.some((question: Question) =>
+        question.answers.every((answer: Answer) => answer.isCorrect === false)
+    );
+
+    if (test.title === ""){
+        alert("Test needs to have a title");
+        return;
+    }
+
     if (isAnyQuestionNameEmpty) {
         alert("Complete all questions");
+        return;
+    }
+
+    if (isAnyAnswerMarked) {
+        alert("Mark at least one correct answer");
         return;
     }
 

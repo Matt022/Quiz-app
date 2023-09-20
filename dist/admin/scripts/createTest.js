@@ -33,7 +33,7 @@ function renderQuestionElements(question, index) {
     const questionInput = document.createElement("input");
     questionInput.type = "text";
     questionInput.value = question.text;
-    questionInput.placeholder = "Question wording";
+    questionInput.placeholder = "Question";
     questionInput.addEventListener("input", (e) => {
         question.text = e.target.value;
     });
@@ -93,10 +93,19 @@ saveBtn.addEventListener("click", () => {
     // Získáme hodnotu názvu testu z inputu
     const testTitleInput = document.getElementById("title");
     test.title = testTitleInput.value;
-    test.questions = getData();
+    test.questions = getData("create");
     const isAnyQuestionNameEmpty = test.questions.some((question) => question.answers.some((answer) => answer.text === ""));
+    const isAnyAnswerMarked = test.questions.some((question) => question.answers.every((answer) => answer.isCorrect === false));
+    if (test.title === "") {
+        alert("Test needs to have a title");
+        return;
+    }
     if (isAnyQuestionNameEmpty) {
         alert("Complete all questions");
+        return;
+    }
+    if (isAnyAnswerMarked) {
+        alert("Mark at least one correct answer");
         return;
     }
     addTest(test).then(() => {

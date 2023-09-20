@@ -105,10 +105,10 @@ editTestBtn.addEventListener("click", () => {
                 // Získáme hodnotu názvu testu zo spanu
                 const nazovInput: HTMLSpanElement = <HTMLSpanElement>document.getElementById("title");
                 test.title = nazovInput.textContent!;
-                test.questions = getData();
+                test.questions = getData("update");
 
                 updateTest(test.id, test).then(() => {
-                    alert("Test was added to database.");
+                    alert("Test was updated.");
                 });
             });
         }

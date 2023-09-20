@@ -1,4 +1,5 @@
 import { Answer } from '../typescript_models/answer';
+import { CreateOrUpdate } from '../typescript_models/createOrUpdate';
 import { Question } from "../typescript_models/question";
 import { Test } from "../typescript_models/test";
 
@@ -17,10 +18,17 @@ export function getQuizIdFromURL(): number | null {
     return null;
 }
 
-export function getData(): Question[] {
-    // Získáme seznam všech otázek
-    const otazkyDivs: NodeListOf<HTMLDivElement> = document.querySelectorAll(".question");
+export function getData(createOrUpdate: CreateOrUpdate): Question[] {
+    
+    let otazkyDivs: NodeListOf<HTMLDivElement> | null = null;
+    if (createOrUpdate === "update") {
+        otazkyDivs = document.querySelectorAll("div.test-update-questions div.question");
+    } else {
+        otazkyDivs = document.querySelectorAll("div.question");
 
+    }
+    // Získáme seznam všech otázek
+    // const otazkyDivs: NodeListOf<HTMLDivElement> = document.querySelectorAll("div.test-update-questions div.question");
     // Vytvorme pole pre otázky
     const questions: Question[] = [];
 
@@ -33,6 +41,7 @@ export function getData(): Question[] {
 
         // získame znenie otázky a priradíme do vytvoreného objektu
         const otazkaInput: HTMLInputElement = <HTMLInputElement>otazkyDivs[i].querySelector("input[type='text']");
+
         question.text = otazkaInput.value;
 
         // všetky answers a k nim správne answers
@@ -52,4 +61,5 @@ export function getData(): Question[] {
     }
 
     return questions;
+
 }

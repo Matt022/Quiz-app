@@ -55,8 +55,9 @@ main section.main-container div#test-form>label {
 main section.main-container div#test-form div.buttons {
     display: flex;
     justify-content: space-between;
-    width: fit-content;
+    width: 32%;
     margin-top: 10px;
+    padding: 0 5px;
 }
 
 main section.main-container div#test-form div.buttons button {
