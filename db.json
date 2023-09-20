@@ -638,33 +638,6 @@
           ]
         }
       ]
-    },
-    {
-      "id": 6,
-      "title": "test",
-      "questions": [
-        {
-          "text": "",
-          "answers": [
-            {
-              "text": "Answer 1",
-              "isCorrect": true
-            },
-            {
-              "text": "Answer 1 2",
-              "isCorrect": false
-            },
-            {
-              "text": "Answer 1 3",
-              "isCorrect": false
-            },
-            {
-              "text": "Answer 1 4",
-              "isCorrect": false
-            }
-          ]
-        }
-      ]
     }
   ]
 }
