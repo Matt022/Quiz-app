@@ -15,12 +15,18 @@ header section.header-container {
     padding: 0 20px;
 }
 
-header section.header-container a {
+header section.header-container div.buttons a {
     color: white;
     text-decoration: none;
     background-color: rgb(0, 153, 255);
     padding: 10px 20px;
     border-radius: 7px;
+    margin: 0 5px;
+    transition: all 0.2s ease-in-out;
+}
+
+header section.header-container div.buttons a:hover {
+    background-color: rgb(2, 132, 219);
 }
 
 main {
@@ -56,9 +62,15 @@ main section.main-container div.testHolder a {
     background-color: rgb(0, 153, 255);
     padding: 10px 20px;
     border-radius: 7px;
+    text-shadow: 1px 0px 0px inherit;
+    font-size: 18px;
 }
 
 main section.main-container div.testHolder a:hover {
     background-color: rgb(6, 140, 230);
     text-shadow: 1px 0px 0px #fff;
+}
+
+main section.main-container div.testHolder a:hover i {
+    text-shadow: none;
 }

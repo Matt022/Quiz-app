@@ -19,7 +19,7 @@ getAllTests().then((tests: Test[]) => {
         divTestHolder.appendChild(paragraphQuestionCount);
 
         const anchorViewDetail: HTMLAnchorElement = document.createElement("a");
-        anchorViewDetail.textContent = "View test detail";
+        anchorViewDetail.innerHTML = `<i class="fa-solid fa-circle-info"></i> &nbsp; View test detail`;
         anchorViewDetail.href = `/admin/pages/testDetail.html?id=${test.id}`;
 
         divTestHolder.appendChild(anchorViewDetail);
