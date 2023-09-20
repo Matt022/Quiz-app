@@ -73,9 +73,11 @@ function renderQuestionElements(question, index) {
     // Pridáme event listener, aby sme mohli otázku odstrániť
     buttonToDeleteQuestion.addEventListener("click", () => {
         if (confirm("Do you really want to delete this question?")) {
-            const questionContainer = document.querySelector("div#questions-container");
-            questionContainer.removeChild(questionDiv);
-            test.questions.splice(index); // Odstránime otázku zo zoznamu otázok
+            // const questionContainer: HTMLDivElement = <HTMLDivElement>document.querySelector("div#questions-container");
+            // questionContainer.removeChild(questionDiv);
+            questionDiv.remove();
+            test.questions.splice(index, 1); // Odstránime otázku zo zoznamu otázok
+            updateQuestionNumbers();
         }
     });
     // Vytvoríme div pre odpovede
@@ -130,4 +132,14 @@ function renderQuestionElements(question, index) {
     questionDiv.appendChild(buttonToDeleteQuestion);
     // Pridáme div otázky do kontajnera pre otázky
     questionContainerDiv.appendChild(questionDiv);
+}
+// Funkcia na aktualizáciu čísel otázok
+function updateQuestionNumbers() {
+    const questionContainers = questionContainerDiv.querySelectorAll('.question');
+    questionContainers.forEach((container, i) => {
+        const label = container.querySelector('label');
+        if (label) {
+            label.textContent = `Question ${i + 1}:`;
+        }
+    });
 }
