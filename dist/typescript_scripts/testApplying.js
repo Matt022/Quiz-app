@@ -1,8 +1,9 @@
 // Importujeme potrebné moduly
 import { getTestById } from "./dbService.js";
-import { getQuizIdFromURL } from "./helpers.js";
+import { HelperClass } from "./helpers.js";
+const helperClass = new HelperClass();
 // Získame ID testu z URL
-const quizId = getQuizIdFromURL();
+const quizId = helperClass.getQuizIdFromURL();
 if (quizId != null) {
     // Načítame test s ID pomocou funkcie getTestById
     getTestById(quizId).then((test) => {

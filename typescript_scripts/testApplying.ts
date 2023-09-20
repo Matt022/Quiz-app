@@ -2,11 +2,12 @@
 import { getTestById } from "./dbService.js";
 import { Test } from "../typescript_models/test.js";
 import { CorrectAnswer } from '../typescript_models/correctAnswer';
-import { getQuizIdFromURL } from "./helpers.js";
 import { Answer } from "../typescript_models/answer.js";
+import { HelperClass } from "./helpers.js";
 
+const helperClass: HelperClass = new HelperClass();
 // Získame ID testu z URL
-const quizId: number | null = getQuizIdFromURL();
+const quizId: number | null = helperClass.getQuizIdFromURL();
 
 if (quizId != null) {
     // Načítame test s ID pomocou funkcie getTestById

@@ -15,6 +15,7 @@ header section.header-container {
     padding: 0 20px;
 }
 
+header section.header-container a,
 header section.header-container div.buttons a {
     color: white;
     text-decoration: none;
@@ -24,7 +25,7 @@ header section.header-container div.buttons a {
     margin: 0 5px;
     transition: all 0.2s ease-in-out;
 }
-
+header section.header-container a:hover,
 header section.header-container div.buttons a:hover {
     background-color: rgb(2, 132, 219);
 }

@@ -2,7 +2,9 @@ import { Answer } from "../../typescript_models/answer";
 import { Question } from "../../typescript_models/question";
 import { Test } from '../../typescript_models/test';
 import { addTest } from "../../typescript_scripts/dbService.js";
-import { getData } from "../../typescript_scripts/helpers.js";
+import { HelperClass } from "../../typescript_scripts/helpers.js";
+
+const helperClass: HelperClass = new HelperClass();
 
 const test: Test = {
     id: 0,
@@ -15,6 +17,41 @@ const saveBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#s
 const addQuestionButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("add-question");
 addQuestionButton.addEventListener("click", () => {
     addQuestion();
+});
+
+saveBtn.addEventListener("click", () => {
+    // Získáme hodnotu názvu testu z inputu
+    const testTitleInput: HTMLInputElement = <HTMLInputElement>document.getElementById("title");
+    test.title = testTitleInput.value;
+
+    test.questions = helperClass.getData("create");
+
+    const isAnyQuestionNameEmpty: boolean = test.questions.some((question: Question) =>
+        question.answers.some((answer: Answer) => answer.text === "")
+    );
+
+    const isAnyAnswerMarked: boolean = test.questions.some((question: Question) =>
+        question.answers.every((answer: Answer) => answer.isCorrect === false)
+    );
+
+    if (test.title === "") {
+        alert("Test needs to have a title");
+        return;
+    }
+
+    if (isAnyQuestionNameEmpty) {
+        alert("Complete all questions");
+        return;
+    }
+
+    if (isAnyAnswerMarked) {
+        alert("Mark at least one correct answer");
+        return;
+    }
+
+    addTest(test).then(() => {
+        alert("Test was added to database.");
+    });
 });
 
 function addQuestion(): void {
@@ -135,39 +172,3 @@ function renderQuestionElements(question: Question, index: number): void {
     // Pridáme div otázky do kontajnera pre otázky
     questionContainerDiv.appendChild(questionDiv);
 }
-
-
-saveBtn.addEventListener("click", () => {
-    // Získáme hodnotu názvu testu z inputu
-    const testTitleInput: HTMLInputElement = <HTMLInputElement>document.getElementById("title");
-    test.title = testTitleInput.value;
-
-    test.questions = getData("create");
-
-    const isAnyQuestionNameEmpty: boolean = test.questions.some((question: Question) =>
-        question.answers.some((answer: Answer) => answer.text === "")
-    );
-
-    const isAnyAnswerMarked: boolean = test.questions.some((question: Question) =>
-        question.answers.every((answer: Answer) => answer.isCorrect === false)
-    );
-
-    if (test.title === ""){
-        alert("Test needs to have a title");
-        return;
-    }
-
-    if (isAnyQuestionNameEmpty) {
-        alert("Complete all questions");
-        return;
-    }
-
-    if (isAnyAnswerMarked) {
-        alert("Mark at least one correct answer");
-        return;
-    }
-
-    addTest(test).then(() => {
-        alert("Test was added to database.");
-    });
-});

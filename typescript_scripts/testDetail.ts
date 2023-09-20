@@ -2,7 +2,9 @@ import { Answer } from "../typescript_models/answer";
 import { Question } from "../typescript_models/question";
 import { Test } from "../typescript_models/test";
 import { deleteTest, getTestById, updateTest } from "./dbService.js";
-import { getData, getQuizIdFromURL } from "./helpers.js";
+import { HelperClass } from './helpers.js';
+
+const helperClass: HelperClass = new HelperClass();
 
 const testUpdateQuestionsContainer: HTMLDivElement = <HTMLDivElement>document.querySelector("div.test-update-questions");
 const deleteTestBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button.deleteTest");
@@ -10,11 +12,13 @@ const editTestBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector
 const disableChangesBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("button.disableChanges");
 const saveBtn: HTMLButtonElement = <HTMLButtonElement>document.querySelector("#save");
 const addQuestionButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("add-question");
-const testId: number | null = getQuizIdFromURL();
+const testId: number | null = helperClass.getQuizIdFromURL();
+let testGlobal: Test;
 
 if (testId != null) {
     getTestById(testId).then((test: Test | null) => {
         if (test) {
+            testGlobal = test;
             const testNameElement: HTMLSpanElement = <HTMLSpanElement>document.getElementById("title");
             testNameElement.textContent = test.title;
 
@@ -56,10 +60,12 @@ if (testId != null) {
             window.location.href = "/admin/pages/allTests.html";
         }
     });
+} else {
+    window.location.href = "/admin/pages/allTests.html";
 }
 
 deleteTestBtn.addEventListener("click", () => {
-    if (testId != null && confirm("Naozaj chcete odstrániť tento test?")) {
+    if (testId != null && confirm("Do you really want to delete this test?")) {
         deleteTest(testId).then(() => {
             alert("Test was deleted successfully");
         });
@@ -106,7 +112,7 @@ editTestBtn.addEventListener("click", () => {
                 // Získáme hodnotu názvu testu zo spanu
                 const titleInput: HTMLSpanElement = <HTMLSpanElement>document.getElementById("title");
                 test.title = titleInput.textContent!;
-                test.questions = getData("update");
+                test.questions = helperClass.getData("update");
 
                 updateTest(test.id, test).then(() => {
                     alert("Test was updated.");
@@ -154,6 +160,7 @@ function renderQuestionElements(question: Question, index: number): void {
             // Získame kontajner otázok a odstránime aktuálnu otázku z neho
             const testUpdateQuestionsContainer: HTMLDivElement = <HTMLDivElement>document.querySelector("div.test-update-questions");
             testUpdateQuestionsContainer.removeChild(testUpdateQuestionsContainer.children[index]);
+            testGlobal.questions.splice(index); // Odstránime otázku zo zoznamu otázok
         }
     });
 

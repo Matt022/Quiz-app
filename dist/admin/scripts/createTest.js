@@ -1,5 +1,6 @@
 import { addTest } from "../../typescript_scripts/dbService.js";
-import { getData } from "../../typescript_scripts/helpers.js";
+import { HelperClass } from "../../typescript_scripts/helpers.js";
+const helperClass = new HelperClass();
 const test = {
     id: 0,
     title: "",
@@ -10,6 +11,29 @@ const saveBtn = document.querySelector("#save");
 const addQuestionButton = document.getElementById("add-question");
 addQuestionButton.addEventListener("click", () => {
     addQuestion();
+});
+saveBtn.addEventListener("click", () => {
+    // Získáme hodnotu názvu testu z inputu
+    const testTitleInput = document.getElementById("title");
+    test.title = testTitleInput.value;
+    test.questions = helperClass.getData("create");
+    const isAnyQuestionNameEmpty = test.questions.some((question) => question.answers.some((answer) => answer.text === ""));
+    const isAnyAnswerMarked = test.questions.some((question) => question.answers.every((answer) => answer.isCorrect === false));
+    if (test.title === "") {
+        alert("Test needs to have a title");
+        return;
+    }
+    if (isAnyQuestionNameEmpty) {
+        alert("Complete all questions");
+        return;
+    }
+    if (isAnyAnswerMarked) {
+        alert("Mark at least one correct answer");
+        return;
+    }
+    addTest(test).then(() => {
+        alert("Test was added to database.");
+    });
 });
 function addQuestion() {
     const question = {
@@ -107,26 +131,3 @@ function renderQuestionElements(question, index) {
     // Pridáme div otázky do kontajnera pre otázky
     questionContainerDiv.appendChild(questionDiv);
 }
-saveBtn.addEventListener("click", () => {
-    // Získáme hodnotu názvu testu z inputu
-    const testTitleInput = document.getElementById("title");
-    test.title = testTitleInput.value;
-    test.questions = getData("create");
-    const isAnyQuestionNameEmpty = test.questions.some((question) => question.answers.some((answer) => answer.text === ""));
-    const isAnyAnswerMarked = test.questions.some((question) => question.answers.every((answer) => answer.isCorrect === false));
-    if (test.title === "") {
-        alert("Test needs to have a title");
-        return;
-    }
-    if (isAnyQuestionNameEmpty) {
-        alert("Complete all questions");
-        return;
-    }
-    if (isAnyAnswerMarked) {
-        alert("Mark at least one correct answer");
-        return;
-    }
-    addTest(test).then(() => {
-        alert("Test was added to database.");
-    });
-});
