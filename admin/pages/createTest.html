@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/admin/styles/createTest.css">
     <title>Create a test</title>
 </head>
@@ -26,8 +27,16 @@
                 <label for="title">Test title:</label><br>
                 <input type="text" id="title" required placeholder="Test title">
                 <div class="buttons">
-                    <button type="button" id="add-question">Add question</button>
-                    <button id="save" type="button">Save test</button>
+                    <button type="button" id="add-question">
+                        <i class="fa-solid fa-plus fa-1.5x"></i> Add question
+                    </button>
+                    <button id="save" type="button">
+                        <i class="fa-solid fa-floppy-disk fa-1.5x"></i> Save test
+                    </button>
+                    <a href="allTests.html">
+                        <i class="fa-solid fa-arrow-left fa-1.5x"></i> Back to all tests
+                    </a>
+
                 </div>
 
                 <h2>Questions:</h2>
