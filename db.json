@@ -2,29 +2,8 @@
   "tests": [
     {
       "id": 1,
-      "title": "Fundamentals of IT",
+      "title": "Fundamentals of IT - UPDATE",
       "questions": [
-        {
-          "text": "What does the abbreviation IT stand for?",
-          "answers": [
-            {
-              "text": "Information Technology",
-              "isCorrect": true
-            },
-            {
-              "text": "Intelligent Phones",
-              "isCorrect": false
-            },
-            {
-              "text": "Innovative Technology",
-              "isCorrect": false
-            },
-            {
-              "text": "Internet Trend",
-              "isCorrect": false
-            }
-          ]
-        },
         {
           "text": "What is an operating system?",
           "answers": [
@@ -126,6 +105,27 @@
             },
             {
               "text": "PDF",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "Random question",
+          "answers": [
+            {
+              "text": "Random answer 1",
+              "isCorrect": true
+            },
+            {
+              "text": "Random answer 1 2",
+              "isCorrect": false
+            },
+            {
+              "text": "Random answer 1 3",
+              "isCorrect": false
+            },
+            {
+              "text": "Random answer 1 4",
               "isCorrect": false
             }
           ]
@@ -633,6 +633,96 @@
             },
             {
               "text": "To create a backup of a website",
+              "isCorrect": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Computer Security Test",
+      "questions": [
+        {
+          "text": "Which of these factors contribute to password security?",
+          "answers": [
+            {
+              "text": "Password length",
+              "isCorrect": true
+            },
+            {
+              "text": "Use of uppercase and lowercase letters",
+              "isCorrect": true
+            },
+            {
+              "text": "Use of special characters",
+              "isCorrect": true
+            },
+            {
+              "text": "Using the same password for all accounts",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "Which of these measures enhance computer security?",
+          "answers": [
+            {
+              "text": "Updating software",
+              "isCorrect": true
+            },
+            {
+              "text": "Creating data backups",
+              "isCorrect": true
+            },
+            {
+              "text": "Sharing passwords on social media",
+              "isCorrect": false
+            },
+            {
+              "text": "Using public Wi-Fi without VPN",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "Which of these techniques are used in cyberattacks?",
+          "answers": [
+            {
+              "text": "Phishing",
+              "isCorrect": true
+            },
+            {
+              "text": "Distributed attacks on services",
+              "isCorrect": true
+            },
+            {
+              "text": "Firewall",
+              "isCorrect": false
+            },
+            {
+              "text": "Virus scans",
+              "isCorrect": false
+            }
+          ]
+        },
+        {
+          "text": "What is the primary goal of encryption?",
+          "answers": [
+            {
+              "text": "Protecting data from unauthorized access",
+              "isCorrect": true
+            },
+            {
+              "text": "Increasing internet speed",
+              "isCorrect": false
+            },
+            {
+              "text": "Detecting malware",
+              "isCorrect": false
+            },
+            {
+              "text": "Creating strong passwords",
               "isCorrect": false
             }
           ]
