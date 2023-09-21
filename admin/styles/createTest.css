@@ -171,3 +171,22 @@ main section.main-container div#test-form div#questions-container div.question d
 
     width: 170px;
 }
+
+/*responsibilita*/
+@media (max-width: 1720px) {
+    input[type="text"] {
+        width: 35%;
+    }
+
+    main section.main-container div#test-form div.buttons {
+        width: 36%;
+    }
+
+    main section.main-container div#test-form div#questions-container {
+        height: 513px;
+    }
+
+    main section.main-container {
+        padding: 10px 20px;
+    }
+}

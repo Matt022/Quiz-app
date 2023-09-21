@@ -25,6 +25,7 @@ header section.header-container div.buttons a {
     margin: 0 5px;
     transition: all 0.2s ease-in-out;
 }
+
 header section.header-container a:hover,
 header section.header-container div.buttons a:hover {
     background-color: rgb(2, 132, 219);
@@ -74,4 +75,36 @@ main section.main-container div.testHolder a:hover {
 
 main section.main-container div.testHolder a:hover i {
     text-shadow: none;
+}
+
+/*responsibilita*/
+@media (max-width: 1720px) {
+    body {
+        margin: auto;
+    }
+
+    body,
+    header,
+    footer {
+        width: 1650px;
+    }
+
+    main {
+        height: 70vh;
+
+        width: 1620px;
+    }
+
+    main section.main-container {
+        width: inherit;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    main section.main-container div.testHolder {
+        margin: 20px 10px;
+        border: 1px solid black;
+        padding: 25px;
+        width: 250px;
+    }
 }
