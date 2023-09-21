@@ -55,7 +55,6 @@ if (testId != null) {
                 questionsContainer.appendChild(questionDiv);
             }
 
-
             deleteTestBtn.addEventListener("click", () => {
                 if (testId != null && confirm("Do you really want to delete this test?")) {
                     deleteTest(testId).then(() => {
@@ -237,17 +236,24 @@ if (testId != null) {
                 testUpdateQuestionsContainer.appendChild(questionDivContainer);
             }
 
-            // Funkcia na aktualizáciu čísel otázok
+            // Táto funkcia aktualizuje čísla otázok v zobrazení kvízových otázok.
+
             function updateQuestionNumbers(): void {
+                // Získaj všetky kontajnery pre otázky v kvíze.
                 const questionContainers: NodeListOf<HTMLDivElement> = testUpdateQuestionsContainer.querySelectorAll('.question');
+
+                // Prejdi všetky kontajnery pre otázky a aktualizuj ich čísla.
                 for (let i: number = 0; i < questionContainers.length; i++) {
+                    // Získaj referenciu na label element pre otázku.
                     const label: HTMLLabelElement = <HTMLLabelElement>questionContainers[i].querySelector('label');
+
+                    // Skontroluj, či bol label nájdený.
                     if (label) {
+                        // Aktualizuj text labelu na základe aktuálnej pozície otázky.
                         label.textContent = `Question ${i + 1}:`;
                     }
                 }
             }
-
         } else {
             window.location.href = "/admin/pages/allTests.html";
         }

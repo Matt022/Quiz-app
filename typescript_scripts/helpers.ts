@@ -4,19 +4,26 @@ import { Question } from "../typescript_models/question";
 
 
 export class HelperClass {
-
-    // Funkcia pre získanie ID z URL
     getQuizIdFromURL(): number | null {
+        // Získaj parametre URL adresy a ulož ich do objektu URLSearchParams.
         const urlParams: URLSearchParams = new URLSearchParams(window.location.search);
+
+        // Získaj hodnotu parametra s názvom "id" z URLSearchParams.
         const quizIdString: string | null = urlParams.get("id");
-    
+
+        // Skontroluj, či bol parameter "id" nájdený v URL adrese.
         if (quizIdString) {
+            // Ak parameter "id" existuje, pokús sa previesť ho na číslo.
             const quizId: number = parseInt(quizIdString, 10);
+
+            // Skontroluj, či prevod na číslo bol úspešný a číslo je platné.
             if (!isNaN(quizId)) {
+                // Vráť identifikátor kvízu ako číslo.
                 return quizId;
             }
         }
-    
+
+        // Ak parameter "id" neexistuje alebo nie je platným číslom, vráť null.
         return null;
     }
     

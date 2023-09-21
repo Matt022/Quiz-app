@@ -182,12 +182,17 @@ if (testId != null) {
                 questionDivContainer.appendChild(buttonToDelete);
                 testUpdateQuestionsContainer.appendChild(questionDivContainer);
             }
-            // Funkcia na aktualizáciu čísel otázok
+            // Táto funkcia aktualizuje čísla otázok v zobrazení kvízových otázok.
             function updateQuestionNumbers() {
+                // Získaj všetky kontajnery pre otázky v kvíze.
                 const questionContainers = testUpdateQuestionsContainer.querySelectorAll('.question');
+                // Prejdi všetky kontajnery pre otázky a aktualizuj ich čísla.
                 for (let i = 0; i < questionContainers.length; i++) {
+                    // Získaj referenciu na label element pre otázku.
                     const label = questionContainers[i].querySelector('label');
+                    // Skontroluj, či bol label nájdený.
                     if (label) {
+                        // Aktualizuj text labelu na základe aktuálnej pozície otázky.
                         label.textContent = `Question ${i + 1}:`;
                     }
                 }
